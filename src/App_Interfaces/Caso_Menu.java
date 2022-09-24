@@ -1,6 +1,11 @@
 package App_Interfaces;
 
-import App_Menu.*;
+import interfaces_menu.Caso_Uno;
+import interfaces_menu.Caso_Cuatro;
+import interfaces_menu.Caso_Seis;
+import interfaces_menu.Caso_Tres;
+import interfaces_menu.Caso_Cinco;
+import interfaces_menu.Caso_Dos_Pasatiempos;
 import helpers.Sonidos;
 import java.awt.Color;
 import java.awt.event.WindowAdapter;
@@ -298,7 +303,7 @@ public class Caso_Menu extends javax.swing.JFrame {
 
         dispose();
 
-        new Caso_Dos().setVisible(true);
+        new Caso_Dos_Pasatiempos().setVisible(true);
     }//GEN-LAST:event_jButton_PasatiemposActionPerformed
 
     private void jButton_HoraDormirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_HoraDormirActionPerformed
