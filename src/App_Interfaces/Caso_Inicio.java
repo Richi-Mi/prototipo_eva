@@ -5,7 +5,7 @@
  */
 package App_Interfaces;
 
-import App_Menu_Clases.Sonidos;
+import helpers.Sonidos;
 import app_alarmas.CrearAlarmas;
 import app_connection.Conexion_Base;
 import javax.swing.JOptionPane;

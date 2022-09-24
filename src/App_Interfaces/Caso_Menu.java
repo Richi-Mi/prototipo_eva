@@ -1,7 +1,7 @@
 package App_Interfaces;
 
 import App_Menu.*;
-import App_Menu_Clases.Sonidos;
+import helpers.Sonidos;
 import java.awt.Color;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;

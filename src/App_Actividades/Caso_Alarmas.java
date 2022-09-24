@@ -10,7 +10,7 @@ package App_Actividades;
 import App_Actividades_Clases.AccionesAlarmas;
 import App_Interfaces.Caso_Actividades;
 import App_Interfaces.Caso_Menu;
-import App_Menu_Clases.Sonidos;
+import helpers.Sonidos;
 import app_alarmas.CrearAlarmas;
 import java.util.Vector;
 import javax.swing.JOptionPane;

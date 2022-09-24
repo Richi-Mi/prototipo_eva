@@ -7,7 +7,7 @@ package App_Menu;
 
 import App_Interfaces.Caso_Actividades;
 import App_Interfaces.Caso_Menu;
-import App_Menu_Clases.Sonidos;
+import helpers.Sonidos;
 import app_alarmas.CrearAlarmas;
 import app_connection.Conexion_Base;
 import com.mysql.jdbc.Connection;

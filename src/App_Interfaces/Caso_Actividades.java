@@ -6,7 +6,7 @@
 package App_Interfaces;
 
 import App_Actividades.*;
-import App_Menu_Clases.Sonidos;
+import helpers.Sonidos;
 import app_alarmas.CrearAlarmas;
 import java.awt.Color;
 import javax.swing.JOptionPane;

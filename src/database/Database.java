@@ -114,9 +114,10 @@ public class Database {
         String collection = Collections.ALARMAS.getNombre();
         String nombre     = alarm.getNombre();
         String tipo       = alarm.getTipo();
+        String hora       = alarm.getHora_sonar();
         int id_user       = alarm.getId_usuario();
         
-        String insertQuery = "insert into " + collection + " (nombre, tipo, FK_usuario) values ('" + nombre + "', '" + tipo + "', " + id_user + ");";
+        String insertQuery = "insert into " + collection + " (nombre, tipo, FK_usuario, hora_sonar) values ('" + nombre + "', '" + tipo + "', " + id_user + ", '" +  hora + "');";
         actualizar( insertQuery );
     }
 }

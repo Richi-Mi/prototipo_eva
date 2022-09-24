@@ -10,7 +10,7 @@ import App_Actividades_Clases.AccionesMedicina;
 import App_Actividades_Clases.AccionesPasatiempos;
 import App_Actividades_Clases.PanelBorrar;
 import App_Interfaces.Caso_Actividades;
-import App_Menu_Clases.Sonidos;
+import helpers.Sonidos;
 import app_alarmas.CrearAlarmas;
 import java.awt.BorderLayout;
 import java.util.Vector;

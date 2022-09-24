@@ -1,6 +1,6 @@
 package modelos;
 
-import App_Menu_Clases.Sonidos;
+import helpers.Sonidos;
 import java.util.TimerTask;
 import javax.swing.JOptionPane;
 
@@ -8,15 +8,21 @@ import javax.swing.JOptionPane;
  * @author Mendoza Castañeda José Ricardo
  */
 
+// hora_sonar: 00:00:00
 public class Alarma extends TimerTask {
 
-    private String nombre, tipo;
+    private String nombre, tipo, hora_sonar;
     private int id_usuario;
 
-    public Alarma( String nombre, String tipo, int id_usuario ) {
+    public Alarma( String nombre, String tipo, int id_usuario, String hora ) {
         this.nombre = nombre;
         this.tipo = tipo;
         this.id_usuario = id_usuario;
+        this.hora_sonar = hora;
+    }
+
+    public String getHora_sonar() {
+        return hora_sonar;
     }
 
     public int getId_usuario() {
