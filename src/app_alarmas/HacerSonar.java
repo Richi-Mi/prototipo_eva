@@ -1,6 +1,7 @@
 
 package app_alarmas;
 
+import modelos.Alarma;
 import java.util.Date;
 import java.util.Timer;
 
