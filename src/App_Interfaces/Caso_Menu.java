@@ -4,7 +4,7 @@ import interfaces_menu.Caso_Uno_Cumpleaños;
 import interfaces_menu.Caso_Cuatro_Parientes;
 import interfaces_menu.Caso_Seis_Medicamentos;
 import interfaces_menu.Caso_Tres_Sueño;
-import interfaces_menu.Caso_Cinco;
+import interfaces_menu.Caso_Cinco_Personales;
 import interfaces_menu.Caso_Dos_Pasatiempos;
 import helpers.Sonidos;
 import java.awt.Color;
@@ -335,7 +335,7 @@ public class Caso_Menu extends javax.swing.JFrame {
 
         dispose();
 
-        new Caso_Cinco().setVisible(true);
+        new Caso_Cinco_Personales().setVisible(true);
     }//GEN-LAST:event_jButton_DatosPersonalesActionPerformed
 
     private void jLabel_SalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_SalirMouseClicked
