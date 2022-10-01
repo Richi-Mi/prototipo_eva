@@ -9,7 +9,7 @@ import App_Actividades_Clases.AccionesFamiliares;
 import App_Actividades_Clases.AccionesMedicina;
 import App_Actividades_Clases.AccionesPasatiempos;
 import App_Actividades_Clases.PanelBorrar;
-import App_Interfaces.Caso_Actividades;
+import interfaces.Actividades;
 import helpers.Sonidos;
 import app_alarmas.CrearAlarmas;
 import java.awt.BorderLayout;
@@ -257,7 +257,7 @@ public class Caso_Borrar extends javax.swing.JFrame {
         
         dispose();
         
-        new Caso_Actividades().setVisible(true);
+        new Actividades().setVisible(true);
         
     }//GEN-LAST:event_jButton_VolverActionPerformed
 

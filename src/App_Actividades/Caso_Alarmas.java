@@ -8,8 +8,8 @@
 package App_Actividades;
 
 import App_Actividades_Clases.AccionesAlarmas;
-import App_Interfaces.Caso_Actividades;
-import App_Interfaces.Caso_Menu;
+import interfaces.Actividades;
+import interfaces.Menu;
 import helpers.Sonidos;
 import app_alarmas.CrearAlarmas;
 import java.util.Vector;
@@ -247,14 +247,14 @@ public class Caso_Alarmas extends javax.swing.JFrame {
         // boton volver
 
         dispose();
-        new Caso_Actividades().setVisible(true);
+        new Actividades().setVisible(true);
     }//GEN-LAST:event_jButton_Borrar1ActionPerformed
 
     private void jButton_VolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VolverActionPerformed
         // boton volver
         
         dispose();
-        new Caso_Actividades().setVisible(true);
+        new Actividades().setVisible(true);
         
     }//GEN-LAST:event_jButton_VolverActionPerformed
 
