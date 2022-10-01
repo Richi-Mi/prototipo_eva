@@ -18,9 +18,9 @@ public class Database {
     private static Connection con;
     // Declaramos los datos de conexion a la bd
     private static final String driver = "com.mysql.jdbc.Driver";
-    private static final String user = "root";
-    private static final String pass = "123456789"; // host/nombre_base_datos
-    private static final String url  = "jdbc:mysql://localhost:3306/eva_prototipo?characterEncoding=utf8&useSSL=false&useUnicode=true";
+    private static final String user   = "root";
+    private static final String pass   = "123456789"; // host/nombre_base_datos
+    private static final String url    = "jdbc:mysql://localhost:3306/eva_prototipo?characterEncoding=utf8&useSSL=false&useUnicode=true";
 
     // Funcion que va conectarse a mi bd de mysql
     private static Connection conectar() {

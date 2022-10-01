@@ -22,6 +22,7 @@ public class Caso_Dos_Pasatiempos extends javax.swing.JFrame {
     
     private String horas, minutos, segundos;
     private int xMouse, yMouse;
+    private int id_user = 1;
     
     public Caso_Dos_Pasatiempos() {
         initComponents();
@@ -227,7 +228,6 @@ public class Caso_Dos_Pasatiempos extends javax.swing.JFrame {
             String nombre_alarma = jTextField_Pasatiempo.getText();
             String tiempo_alarma = horas + ":" + minutos + ":" + segundos;
             String tipo          = "pasatiempos";
-            int id_user          = 1;
             
             alarm = new Alarma( nombre_alarma, tipo, id_user, tiempo_alarma);
             Database.insert(alarm);

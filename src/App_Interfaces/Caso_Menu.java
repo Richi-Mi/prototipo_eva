@@ -1,9 +1,9 @@
 package App_Interfaces;
 
-import interfaces_menu.Caso_Uno;
+import interfaces_menu.Caso_Uno_Cumpleaños;
 import interfaces_menu.Caso_Cuatro;
 import interfaces_menu.Caso_Seis;
-import interfaces_menu.Caso_Tres;
+import interfaces_menu.Caso_Tres_Sueño;
 import interfaces_menu.Caso_Cinco;
 import interfaces_menu.Caso_Dos_Pasatiempos;
 import helpers.Sonidos;
@@ -295,7 +295,7 @@ public class Caso_Menu extends javax.swing.JFrame {
 
         dispose();
 
-        new Caso_Uno().setVisible(true);
+        new Caso_Uno_Cumpleaños().setVisible(true);
     }//GEN-LAST:event_jButton_NombresImporantesActionPerformed
 
     private void jButton_PasatiemposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_PasatiemposActionPerformed
@@ -311,7 +311,7 @@ public class Caso_Menu extends javax.swing.JFrame {
 
         dispose();
 
-        new Caso_Tres().setVisible(true);
+        new Caso_Tres_Sueño().setVisible(true);
     }//GEN-LAST:event_jButton_HoraDormirActionPerformed
 
     private void jButton_ContactosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_ContactosActionPerformed

@@ -17,12 +17,12 @@ import modelos.Alarma;
  * @author Mendoza Castañeda José Ricardo
  */
 
-public class Caso_Tres extends javax.swing.JFrame {
+public class Caso_Tres_Sueño extends javax.swing.JFrame {
     
     private int xMouse, yMouse;
     private String horas_desp, minutos_desp, segundos_desp, horas_dor, minutos_dor, segundos_dor;
     
-    public Caso_Tres() {
+    public Caso_Tres_Sueño() {
         initComponents();
         setLocationRelativeTo(null);
         
@@ -323,21 +323,23 @@ public class Caso_Tres extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Caso_Tres.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Caso_Tres_Sueño.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Caso_Tres.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Caso_Tres_Sueño.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Caso_Tres.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Caso_Tres_Sueño.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Caso_Tres.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Caso_Tres_Sueño.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Caso_Tres().setVisible(true);
+                new Caso_Tres_Sueño().setVisible(true);
             }
         });
     }

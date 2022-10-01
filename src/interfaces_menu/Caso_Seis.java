@@ -1,15 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package interfaces_menu;
 
 import App_Interfaces.Caso_Actividades;
 import App_Interfaces.Caso_Menu;
 import helpers.Sonidos;
 import app_alarmas.CrearAlarmas;
-import app_connection.Conexion_Base;
+import database.Database;
+import modelos.Alarma;
 import com.mysql.jdbc.Connection;
 import java.awt.Color;
 import java.awt.event.WindowAdapter;
@@ -21,8 +18,8 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author DELL
+ * @author Juan Pablo Figueroa
+ * @author Mendoza Castañeda José Ricardo
  */
 public class Caso_Seis extends javax.swing.JFrame {
 
