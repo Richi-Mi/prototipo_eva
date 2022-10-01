@@ -4,8 +4,8 @@
 package App_Actividades;
 
 import App_Actividades_Clases.AccionesAyuda;
-import App_Interfaces.Caso_Actividades;
-import App_Interfaces.Caso_Menu;
+import interfaces.Actividades;
+import interfaces.Menu;
 import app_alarmas.CrearAlarmas;
 import java.util.Vector;
 import javax.swing.JLabel;
@@ -112,7 +112,7 @@ public class Caso_Ayuda extends javax.swing.JFrame {
         
         dispose();
         
-        new Caso_Actividades().setVisible(true);
+        new Actividades().setVisible(true);
         
     }//GEN-LAST:event_jButton_VolverActionPerformed
 

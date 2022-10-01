@@ -5,6 +5,7 @@ import java.applet.AudioClip;
 /**
  * @author Juan Pablo Figueroa
  */
+
 public class Sonidos {
     
     public static AudioClip SoundA;

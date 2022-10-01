@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import modelos.Alarma;
 import modelos.Usuario;
+import modelos.Contacto;
 
 /**
  * @author Mendoza Castañeda José Ricardo
@@ -118,6 +119,19 @@ public class Database {
         int id_user       = alarm.getId_usuario();
         
         String insertQuery = "insert into " + collection + " (nombre, tipo, FK_usuario, hora_sonar) values ('" + nombre + "', '" + tipo + "', " + id_user + ", '" +  hora + "');";
+        actualizar( insertQuery );
+    }
+    public static void insert( Contacto contact ) {
+        
+        String collection = Collections.CONTACTOS.getNombre();
+        String nombre = contact.getNombre();
+        String sexo = contact.getSexo();
+        String idioma = contact.getIdioma();
+        int id_usuario = contact.getId_usuario();
+        String parentesco = contact.getParentesco();
+        String numero = contact.getNumero();
+        
+        String insertQuery = "insert into " + collection + " (nombre, sexo, idioma, id_usuario, parentesco, numero) values (\" "+ nombre +" \", \" " + sexo + " \", \" " + idioma + " \", " + id_usuario + ", \" " + parentesco + " \", \" " + numero + " \");";
         actualizar( insertQuery );
     }
 }
