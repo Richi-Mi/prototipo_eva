@@ -1,42 +1,47 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package interfaces_menu;
 
 import App_Interfaces.Caso_Actividades;
 import App_Interfaces.Caso_Menu;
 import helpers.Sonidos;
-import app_alarmas.CrearAlarmas;
-import app_connection.Conexion_Base;
-import com.mysql.jdbc.Connection;
 import java.awt.Color;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.sql.PreparedStatement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import modelos.Contacto;
+import database.Database;
 
 /**
- *
- * @author DELL
+ * @author Juan Pablo Figueroa
+ * @author Mendoza Castañeda José Ricardo
+ * 
+ * TODO: Agregar el sexo de el pariente
  */
-public class Caso_Cuatro extends javax.swing.JFrame {
+public class Caso_Cuatro_Parientes extends javax.swing.JFrame {
 
-    private CrearAlarmas crear = new CrearAlarmas();
+    private int xMouse, yMouse;
+    private int id_usuario = 1;
     
-    public Caso_Cuatro() {
+    public Caso_Cuatro_Parientes() {
         initComponents();
         setLocationRelativeTo(null);
-        cerrar();
+        
+        this.cerrar();
+        
         Sonidos objeto = new Sonidos();
         objeto.Caso_Cuatro();
-        
-        crear.programarTodasLasAlarmas();
        
+    }
+    
+    public void vacia() {
+        
+        jTextField_NamePersona1.setText("");
+        jTextField_KinshipPersona1.setText("");
+        jTextField_NumberPersona1.setText("");
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -226,14 +231,30 @@ public class Caso_Cuatro extends javax.swing.JFrame {
 }// </editor-fold>
     
     private void jButton_SaveNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_SaveNumberActionPerformed
-        // Boton Save
-        Conexion_Base objeto = new Conexion_Base();
         
-        String respuesta;
-        BD();
-        respuesta = JOptionPane.showInputDialog(null, "Te gustaria configurar otra opcion?");
+        try{
+          
+            if(!jTextField_NamePersona1.getText().equals("")){
+                String nombre = jTextField_NamePersona1.getText().trim();
+                String parentesco = jTextField_KinshipPersona1.getText().trim();
+                String numero = jTextField_NumberPersona1.getText().trim();
+                
+                Contacto contact = new Contacto(nombre, "null", "Español", id_usuario );
+                contact.setNumero(numero);
+                contact.setParentesco(parentesco);
+                
+                Database.insert( contact );
+                
+            }
+              
+        } catch(Exception ex) {
+            Logger.getLogger(Caso_Cuatro_Parientes.class.getName()).log(Level.SEVERE, null,ex);
+        }
+        
+        String respuesta = JOptionPane.showInputDialog(null, "Te gustaria configurar otra opcion?");
+        
         if (respuesta.equalsIgnoreCase("Si")) {
-            Vacia();
+            vacia();
         } else if (respuesta.equalsIgnoreCase("no")) {
             dispose();
             new Caso_Actividades().setVisible(true);
@@ -246,7 +267,6 @@ public class Caso_Cuatro extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jLabel_SalirMouseClicked
 
-    int xMouse, yMouse;
     private void jLabel_SalirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_SalirMouseEntered
         // Colorear cuando pasa encima el cursor
         jLabel_Salir.setBackground(Color.red);
@@ -281,51 +301,7 @@ public class Caso_Cuatro extends javax.swing.JFrame {
 
         new Caso_Menu().setVisible(true);
     }//GEN-LAST:event_jButton_Borrar1ActionPerformed
-    Conexion_Base con = new Conexion_Base(); 
-    Connection cn = (Connection) con.conexion();
-    
-    public void Vacia(){
-    jTextField_NamePersona1.setText("");
-    jTextField_KinshipPersona1.setText("");
-    jTextField_NumberPersona1.setText("");}
-    
-    public void BD(){
-        
-        try{
-          for(int i = 0; i < 1;i++){
-             if(!jTextField_NamePersona1.getText().equals("")){
-        PreparedStatement pps = cn.prepareStatement("INSERT INTO caso_cuatro(nombre,parentesco,numero,FK_usuario) VALUES(?,?,?,?)");
-             pps.setString(1, jTextField_NamePersona1.getText());
-             pps.setString(2, jTextField_KinshipPersona1.getText());
-             pps.setString(3, jTextField_NumberPersona1.getText());
-             pps.setString(4, Integer.toString(con.Usuarios));
-             pps.executeUpdate();
-              }
-              }
-        }catch(Exception ex){
-            Logger.getLogger(Caso_Cuatro.class.getName()).log(Level.SEVERE, null,ex);
-        }
-        
-    }
-    
-    public void BDB(){
-        try{
-          for(int i = 0; i < 1;i++){
-              if(!jTextField_NamePersona1.getText().equals("")){
-             PreparedStatement pps = cn.prepareStatement("delete from caso_cuatro where nombre='"+jTextField_NamePersona1.getText()+"'");
-             pps.executeUpdate();
-              }
-              
-          }
-        }catch(Exception ex){
-            Logger.getLogger(Caso_Cuatro.class.getName()).log(Level.SEVERE, null,ex);
-        }
-    }
-    
-    
-    /**
-     * @param args the command line arguments
-     */
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -340,21 +316,23 @@ public class Caso_Cuatro extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Caso_Cuatro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Caso_Cuatro_Parientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Caso_Cuatro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Caso_Cuatro_Parientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Caso_Cuatro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Caso_Cuatro_Parientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Caso_Cuatro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Caso_Cuatro_Parientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Caso_Cuatro().setVisible(true);
+                new Caso_Cuatro_Parientes().setVisible(true);
             }
         });
     }

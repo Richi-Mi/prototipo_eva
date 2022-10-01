@@ -1,8 +1,8 @@
 package App_Interfaces;
 
 import interfaces_menu.Caso_Uno_Cumpleaños;
-import interfaces_menu.Caso_Cuatro;
-import interfaces_menu.Caso_Seis;
+import interfaces_menu.Caso_Cuatro_Parientes;
+import interfaces_menu.Caso_Seis_Medicamentos;
 import interfaces_menu.Caso_Tres_Sueño;
 import interfaces_menu.Caso_Cinco;
 import interfaces_menu.Caso_Dos_Pasatiempos;
@@ -319,7 +319,7 @@ public class Caso_Menu extends javax.swing.JFrame {
 
         dispose();
 
-        new Caso_Cuatro().setVisible(true);
+        new Caso_Cuatro_Parientes().setVisible(true);
     }//GEN-LAST:event_jButton_ContactosActionPerformed
 
     private void jButton_MedicinasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_MedicinasActionPerformed
@@ -327,7 +327,7 @@ public class Caso_Menu extends javax.swing.JFrame {
 
         dispose();
 
-        new Caso_Seis().setVisible(true);
+        new Caso_Seis_Medicamentos().setVisible(true);
     }//GEN-LAST:event_jButton_MedicinasActionPerformed
 
     private void jButton_DatosPersonalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_DatosPersonalesActionPerformed

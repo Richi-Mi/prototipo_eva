@@ -7,7 +7,8 @@ package database;
 
 public enum Collections {
     USUARIO("usuario"),
-    ALARMAS("alarmas");
+    ALARMAS("alarmas"),
+    CONTACTOS("contactos");
 
     @Override
     public String toString() {

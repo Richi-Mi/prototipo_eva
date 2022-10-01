@@ -286,6 +286,7 @@ public class Caso_Uno_Cumpleaños extends javax.swing.JFrame {
     private void jButton_SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_SaveActionPerformed
         
         Alarma alarm;
+        getTime();
         try
         {
 
