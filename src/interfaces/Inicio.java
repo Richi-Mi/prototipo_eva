@@ -1,34 +1,36 @@
-
 package interfaces;
 
 import helpers.Sonidos;
-import app_alarmas.CrearAlarmas;
-import com.mysql.jdbc.Connection;
 import java.awt.Color;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.sql.PreparedStatement;
+import database.Database;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import modelos.Usuario;
 
 /**
  * @author Juan Pablo figueroa
+ * @author Mendoza Castañeda José Ricardo
  */
-public class Caso_Inicio extends javax.swing.JFrame {
+public class Inicio extends javax.swing.JFrame {
 
-    Sonidos objeto = new Sonidos();
-    int xMouse, yMouse;
+    private Sonidos objeto = new Sonidos();
+    private int xMouse, yMouse;
+    private String nombre, sexo, idioma;
+    private Usuario usr;
 
-    public Caso_Inicio() {
+    public Inicio() {
         initComponents();
         setLocationRelativeTo(null);
-        
+
         this.cerrar();
         objeto.Caso_Inicio1();
 
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -113,11 +115,6 @@ public class Caso_Inicio extends javax.swing.JFrame {
         jComboBox_Sexos.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jComboBox_Sexos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mujer", "Hombre", "Prefiero no decirlo" }));
         jComboBox_Sexos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jComboBox_Sexos.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jComboBox_SexosMouseEntered(evt);
-            }
-        });
         jPanel1.add(jComboBox_Sexos, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, -1, -1));
 
         jComboBox_Idiomas.setBackground(new java.awt.Color(153, 153, 255));
@@ -208,25 +205,28 @@ public class Caso_Inicio extends javax.swing.JFrame {
     }
 
     private void jButton_ContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_ContinuarActionPerformed
-        // Boton Continuar
-        String nombre, sexo, idioma;
+
         nombre = jTextField_Usuario.getText();
         sexo = jComboBox_Sexos.getSelectedItem().toString();
         idioma = jComboBox_Idiomas.getSelectedItem().toString();
-        BD();
-        //JOptionPane.showMessageDialog(null, sexo + nombre + idioma);
+        try {
+            if (!jTextField_Usuario.getText().equals(""))
+            {
+
+                String nombre = jTextField_Usuario.getText();
+                String sexo   = (String) jComboBox_Sexos.getSelectedItem();
+                String idioma = (String) jComboBox_Idiomas.getSelectedItem();
+
+                usr = new Usuario(nombre, sexo, idioma);
+                Database.insert(usr);
+            }
+
+        } catch (Exception ex) {
+            Logger.getLogger(Inicio.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
         dispose();
 
-        /* objeto.Caso_Inicio2();
-        
-        objeto.SoundA.stop();
-        objeto.Caso_Inicio3();
-       JOptionPane.showMessageDialog(null, "¿Deseas configurar el dispositivo antes de continuar?");
-        objeto.SoundA.stop();
-        objeto.Caso_Inicio4();
-       JOptionPane.showMessageDialog(null, "No es obligatorio pero Eva te lo recomienda");
-        objeto.SoundA.stop();
-         */
         new InicioDecision().setVisible(true);
 
         objeto.Caso_Inicio3();
@@ -291,34 +291,6 @@ public class Caso_Inicio extends javax.swing.JFrame {
         jButton_Continuar.setBackground(new Color(204, 204, 255));
         jButton_Continuar.setForeground(Color.black);
     }//GEN-LAST:event_jButton_ContinuarMouseExited
-
-    private void jComboBox_SexosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBox_SexosMouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox_SexosMouseEntered
-
-    public void BD() {
-        try
-        {
-            for (int i = 0; i < 1; i++)
-            {
-                if (!jTextField_Usuario.getText().equals(""))
-                {
-                    PreparedStatement pps = cn.prepareStatement("INSERT INTO usuario(nombre,sexo,idioma) VALUES(?,?,?)");
-                    pps.setString(1, jTextField_Usuario.getText());
-                    pps.setString(2, (String) jComboBox_Sexos.getSelectedItem());
-                    pps.setString(3, (String) jComboBox_Idiomas.getSelectedItem());
-                    pps.executeUpdate();
-                }
-            }
-        } catch (Exception ex)
-        {
-            Logger.getLogger(Caso_Inicio.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -337,23 +309,24 @@ public class Caso_Inicio extends javax.swing.JFrame {
             }
         } catch (ClassNotFoundException ex)
         {
-            java.util.logging.Logger.getLogger(Caso_Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex)
         {
-            java.util.logging.Logger.getLogger(Caso_Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex)
         {
-            java.util.logging.Logger.getLogger(Caso_Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex)
         {
-            java.util.logging.Logger.getLogger(Caso_Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Inicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Caso_Inicio().setVisible(true);
+                new Inicio().setVisible(true);
             }
         });
     }
