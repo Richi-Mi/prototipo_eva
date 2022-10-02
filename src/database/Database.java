@@ -1,9 +1,13 @@
 package database;
 
 import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.ResultSetImpl;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import modelos.Alarma;
 import modelos.Usuario;
 import modelos.Contacto;
@@ -66,6 +70,14 @@ public class Database {
         } catch (SQLException ex) {
             System.out.println("Error al ejecutar el query");
             System.out.println( ex );
+        }
+        finally {
+            try {
+                con.close();
+                System.out.println("Conexión cerrada.");
+            } catch (SQLException ex) {
+                System.out.println("ERROR Al cerrar la conexión a la DB.");
+            }
         }
     }
 
@@ -133,5 +145,84 @@ public class Database {
         
         String insertQuery = "insert into " + collection + " (nombre, sexo, idioma, id_usuario, parentesco, numero) values (\" "+ nombre +" \", \" " + sexo + " \", \" " + idioma + " \", " + id_usuario + ", \" " + parentesco + " \", \" " + numero + " \");";
         actualizar( insertQuery );
+    }
+    public static void delete( Usuario usr ) {
+        String collection = Collections.USUARIO.getNombre();
+        String nombre = usr.getNombre();
+        
+        String deleteQuery = "delete from " + collection + " where nombre = \"" + nombre + "\"";
+        actualizar( deleteQuery );
+    }
+    public static void delete( Alarma alarm ) {
+        String collection = Collections.ALARMAS.getNombre();
+        String nombre = alarm.getNombre();
+        
+        String deleteQuery = "delete from " + collection + " where nombre = \"" + nombre + "\"";
+        actualizar( deleteQuery );
+    }
+    public static void delete( Contacto contact ) {
+        String collection = Collections.CONTACTOS.getNombre();
+        String nombre = contact.getNombre();
+        
+        String deleteQuery = "delete from " + collection + " where nombre = \"" + nombre + "\"";
+        actualizar( deleteQuery );
+    }
+    
+    public static String formatSelectQuery( String collection, String[] keys ) {
+        String getQuery = "select ";
+        
+        for( int i = 1; i <= keys.length; i++ ) {
+            if( i < keys.length ) {
+                getQuery += keys[i - 1] + ", ";
+            }
+            if( i == keys.length ) {
+                getQuery += keys[i - 1] + " ";
+            }
+        }
+        getQuery += " from " + collection + ";";
+        
+        
+        return getQuery;
+    }
+    public static ArrayList<String[]> select( String collection, String[] keys ) {
+        // [ id, ...data ]
+        ArrayList<String[]> list = new ArrayList<String[]>();
+       
+        String getQuery = formatSelectQuery( collection, keys );
+        
+        try {
+            Connection con = conectar();
+            Statement st = con.createStatement();
+            ResultSetImpl res = (ResultSetImpl) st.executeQuery( getQuery );
+            
+            while( res.next() ) {
+                
+                String[] data = new String[ keys.length ];
+                
+                for( int i = 0; i < data.length; i++ ) {
+                    
+                    data[i] = res.getString( keys[i] );
+                    
+                }
+                
+                list.add(data);
+     
+            }
+            return list;
+        } catch (SQLException ex) {
+            System.out.println( ex );
+            System.out.println("No Data.");
+            
+            return null;
+        }
+        
+    }
+
+    public static ArrayList<String[]> getUsers() {
+        String collection = Collections.USUARIO.getNombre();
+        String[] keys = {"sexo"};
+        
+        ArrayList<String[]> data = select( Collections.USUARIO.getNombre(), keys );
+        return data;
     }
 }

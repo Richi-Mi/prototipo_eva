@@ -1,45 +1,34 @@
 /** CASO_BORRAR.
  * Mostrara la información de todos los casos y podra eliminarlos cuando se requiera
  */
+
 package App_Actividades;
 
-import App_Actividades_Clases.AccionesAlarmas;
-import App_Actividades_Clases.AccionesAyuda;
-import App_Actividades_Clases.AccionesFamiliares;
-import App_Actividades_Clases.AccionesMedicina;
-import App_Actividades_Clases.AccionesPasatiempos;
 import App_Actividades_Clases.PanelBorrar;
 import interfaces.Actividades;
 import helpers.Sonidos;
-import app_alarmas.CrearAlarmas;
 import java.awt.BorderLayout;
 import java.util.Vector;
 
 /**
- * @author Mendoza Castañeda José Ricardo
- *
+ * @author Juan Pablo Figueroa.
+ * @author Mendoza Castañeda José Ricardo.
  */
-public class Caso_Borrar extends javax.swing.JFrame {
 
-    private AccionesAlarmas metodos_alarmas = new AccionesAlarmas();
-    private AccionesAyuda metodos_ayuda = new AccionesAyuda();
-    private AccionesFamiliares metodos_familiar = new AccionesFamiliares();
-    private AccionesMedicina metodos_medicina = new AccionesMedicina();
-    private AccionesPasatiempos metodos_pasatiempos = new AccionesPasatiempos();
+public class Caso_Borrar extends javax.swing.JFrame {
 
     private int id = 1;
     private String caso, key1, key2;
     private Vector<Object[]> datos;
     
-    private CrearAlarmas crear = new CrearAlarmas();
-
     public Caso_Borrar() {
         initComponents();
+        
+        // Sonido.
         Sonidos objeto = new Sonidos();
         objeto.Caso_Borrar();
+        
         setLocationRelativeTo(null);
-
-        crear.programarTodasLasAlarmas();
     }
 
     public void mostrarData(String key1, String key2) {
