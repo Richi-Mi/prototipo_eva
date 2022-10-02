@@ -6,8 +6,6 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import modelos.Alarma;
 import modelos.Usuario;
 import modelos.Contacto;
@@ -168,7 +166,7 @@ public class Database {
         actualizar( deleteQuery );
     }
     
-    public static String formatSelectQuery( String collection, String[] keys ) {
+    private static String formatSelectQuery( String collection, String[] keys ) {
         String getQuery = "select ";
         
         for( int i = 1; i <= keys.length; i++ ) {
@@ -180,6 +178,22 @@ public class Database {
             }
         }
         getQuery += " from " + collection + ";";
+        
+        
+        return getQuery;
+    }
+    private static String formatSelectQuery( String collection, String[] keys, String conditional ) {
+        String getQuery = "select ";
+        
+        for( int i = 1; i <= keys.length; i++ ) {
+            if( i < keys.length ) {
+                getQuery += keys[i - 1] + ", ";
+            }
+            if( i == keys.length ) {
+                getQuery += keys[i - 1] + " ";
+            }
+        }
+        getQuery += " from " + collection + " where " + conditional + ";";
         
         
         return getQuery;
@@ -217,12 +231,101 @@ public class Database {
         }
         
     }
-
-    public static ArrayList<String[]> getUsers() {
-        String collection = Collections.USUARIO.getNombre();
-        String[] keys = {"sexo"};
+    private static ArrayList<String[]> select( String collection, String[] keys, String conditional ) {
+        // [ id, ...data ]
+        ArrayList<String[]> list = new ArrayList<String[]>();
+       
+        String getQuery = formatSelectQuery( collection, keys, conditional );
         
-        ArrayList<String[]> data = select( Collections.USUARIO.getNombre(), keys );
+        try {
+            Connection con = conectar();
+            Statement st = con.createStatement();
+            ResultSetImpl res = (ResultSetImpl) st.executeQuery( getQuery );
+            
+            while( res.next() ) {
+                
+                String[] data = new String[ keys.length ];
+                
+                for( int i = 0; i < data.length; i++ ) {
+                    
+                    data[i] = res.getString( keys[i] );
+                    
+                }
+                
+                list.add(data);
+     
+            }
+            return list;
+        } catch (SQLException ex) {
+            System.out.println( ex );
+            System.out.println("No Data.");
+            
+            return null;
+        }
+        
+    }
+
+    /** Selects Users.
+     * @param keys[] .- Viene de el usuario, que columnas desea obtener.
+     * @param conditional .- Obtener solo si se cumple la condicion.
+     */
+    public static ArrayList<String[]> selectUsers( String[] keys ) {
+        String collection = Collections.USUARIO.getNombre();
+        ArrayList<String[]> data = select( collection, keys );
+        
+        return data;
+    }
+    public static String[] selectUsers( String[] keys, Usuario usr ) {  
+        String collection = Collections.USUARIO.getNombre();
+        String conditional = "nombre = \"" + usr.getNombre() + "\";";
+        String[] user = select( collection, keys, conditional).get(0);
+        
+        return user;
+    }
+    public static ArrayList<String[]> selectUsers( String[] keys, String conditional ) {
+        String collection = Collections.USUARIO.getNombre();
+        ArrayList<String[]> data = select( collection, keys, conditional );
+        
+        return data;
+    }
+    // Select Alarmas.
+    public static ArrayList<String[]> selectAlarmas( String[] keys ) {
+        String collection = Collections.ALARMAS.getNombre();
+        ArrayList<String[]> data = select( collection, keys );
+        
+        return data;
+    }
+    public static String[] selectAlarmas( String[] keys, Alarma alarm ) {  
+        String collection = Collections.ALARMAS.getNombre();
+        String conditional = "nombre = \"" + alarm.getNombre() + "\";";
+        String[] user = select( collection, keys, conditional).get(0);
+        
+        return user;
+    }
+    public static ArrayList<String[]> selectAlarmas( String[] keys, String conditional ) {
+        String collection = Collections.ALARMAS.getNombre();
+        ArrayList<String[]> data = select( collection, keys, conditional );
+        
+        return data;
+    }
+    // Select Contactos.
+    public static ArrayList<String[]> selectContacts( String[] keys ) {
+        String collection = Collections.CONTACTOS.getNombre();
+        ArrayList<String[]> data = select( collection, keys );
+        
+        return data;
+    }
+    public static String[] selectContacts( String[] keys, Contacto contact ) {  
+        String collection = Collections.CONTACTOS.getNombre();
+        String conditional = "nombre = \"" + contact.getNombre() + "\";";
+        String[] user = select( collection, keys, conditional).get(0);
+        
+        return user;
+    }
+    public static ArrayList<String[]> selectContacts( String[] keys, String conditional ) {
+        String collection = Collections.CONTACTOS.getNombre();
+        ArrayList<String[]> data = select( collection, keys, conditional );
+        
         return data;
     }
 }
