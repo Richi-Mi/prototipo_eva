@@ -9,7 +9,7 @@ import java.util.Timer;
  * @author richi_mc
  */
 
-public class HacerSonar extends Thread{
+public class HacerSonar extends Thread {
 
     private String nombre;
     private Date sonar;

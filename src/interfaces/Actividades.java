@@ -1,6 +1,9 @@
 package interfaces;
 
-import App_Actividades.*;
+import actividades.Caso_Ayuda;
+import actividades.Caso_Alarmas;
+import actividades.Caso_Buscar;
+import actividades.Caso_Borrar;
 import helpers.Sonidos;
 import java.awt.Color;
 
