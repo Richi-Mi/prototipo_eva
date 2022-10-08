@@ -7,27 +7,25 @@ import App_Actividades_Clases.AccionesAyuda;
 import interfaces.Actividades;
 import interfaces.Menu;
 import app_alarmas.CrearAlarmas;
+import java.util.ArrayList;
 import java.util.Vector;
 import javax.swing.JLabel;
 import javax.swing.JSeparator;
-
+import database.Database;
 /**
  * @author Mendoza Castañeda José Ricardo
  */
 
 public class Caso_Ayuda extends javax.swing.JFrame {
-    
-    private AccionesAyuda acciones = new AccionesAyuda();
+   
     private int id = 1, i;
     
-    private CrearAlarmas crear = new CrearAlarmas();
-    
     public Caso_Ayuda() {
+        
         initComponents();
         setLocationRelativeTo(null);
         this.mostrarContactos();
         
-        crear.programarTodasLasAlarmas();
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -117,17 +115,18 @@ public class Caso_Ayuda extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton_VolverActionPerformed
 
     public void mostrarContactos() {
+        String[] keys = {"nombre", "idioma", "parentesco", "numero"};
+        String cond = "id_usuario = " + id;
+        ArrayList<String[]> contactos = Database.selectContacts( keys, cond );
         
-        Vector<Object[]> telefonos = acciones.getNumeros( id );
-        
-        for( i = 0; i < telefonos.size(); i++ ) {
+        for( i = 0; i < contactos.size(); i++ ) {
             
-            Object[] telefono = telefonos.elementAt( i );
+            String[] contacto = contactos.get(i );
             
-            String mensajeInfo = telefono[3] + ". - " + telefono[1] + ": ";
+            String mensajeInfo = contacto[0] + ". - " + contacto[2] + ": ";
             JLabel labelInfo = new JLabel( mensajeInfo ); 
             
-            String mensajeNum = telefono[2] + "";
+            String mensajeNum = contacto[3] + "";
             JLabel labelNum = new JLabel( mensajeNum );       
             
             panelPrincipal.add( labelInfo );

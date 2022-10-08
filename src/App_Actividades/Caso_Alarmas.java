@@ -3,7 +3,6 @@
  * - Mostrar las alarmas que tiene el usuario actual.
  * - Agregar una nueva alarma.
  * - Eliminar una alarma de un usuario.
- *
  */
 package App_Actividades;
 

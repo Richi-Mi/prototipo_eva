@@ -9,6 +9,7 @@ import interfaces.Actividades;
 import helpers.Sonidos;
 import java.awt.BorderLayout;
 import java.util.Vector;
+import database.Database;
 
 /**
  * @author Juan Pablo Figueroa.
@@ -212,7 +213,7 @@ public class Caso_Borrar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnFamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFamActionPerformed
-        this.datos = metodos_familiar.getFamiliares(id);
+        
         this.caso = "familiares";
         this.mostrarData("Familiar", "Cumpleaños");
     }//GEN-LAST:event_btnFamActionPerformed
