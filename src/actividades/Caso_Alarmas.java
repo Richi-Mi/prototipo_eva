@@ -17,20 +17,25 @@ import javax.swing.table.DefaultTableModel;
 import modelos.Alarma;
 
 /**
+ * NOTA: Solucionar Errores.
  * @author Mendoza Castañeda José Ricardo
  */
 public class Caso_Alarmas extends javax.swing.JFrame {
     private DefaultTableModel model;
     private int id = 1; // Cambiarlo por el nombre
-
+    private CrearAlarmas crear;
+    
     public Caso_Alarmas() {
         initComponents();
         model = (DefaultTableModel) table.getModel();
+        crear = new CrearAlarmas();
         
         Sonidos objeto = new Sonidos();
         objeto.Caso_Alarmas();
         
         setLocationRelativeTo(null);
+        
+        crear.programarTodasLasAlarmas();
         
         this.llenarCombos();
         this.limpiarTabla();
