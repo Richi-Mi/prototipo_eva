@@ -9,37 +9,35 @@ package App_Actividades;
 import App_Actividades_Clases.AccionesAlarmas;
 import interfaces.Actividades;
 import interfaces.Menu;
+import database.Database;
 import helpers.Sonidos;
 import app_alarmas.CrearAlarmas;
+import java.util.ArrayList;
 import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import modelos.Alarma;
 
 /**
  * @author Mendoza Castañeda José Ricardo
  */
 public class Caso_Alarmas extends javax.swing.JFrame {
-
-    private AccionesAlarmas acciones = new AccionesAlarmas();
     private DefaultTableModel model;
     private int id = 1; // Cambiarlo por el nombre
-    
-    private CrearAlarmas crear = new CrearAlarmas();
 
     public Caso_Alarmas() {
         initComponents();
         model = (DefaultTableModel) table.getModel();
+        
         Sonidos objeto = new Sonidos();
         objeto.Caso_Alarmas();
         
         setLocationRelativeTo(null);
-        model = (DefaultTableModel) table.getModel();
         
         this.llenarCombos();
         this.limpiarTabla();
         
         this.consultarAlarmas();
-        crear.programarTodasLasAlarmas();
     }
     public void llenarCombos() {
         int i;
@@ -58,10 +56,10 @@ public class Caso_Alarmas extends javax.swing.JFrame {
     }
 
     public void consultarAlarmas() {
-        Vector<Object[]> alarmas = acciones.getAlarmas( id );
+        ArrayList<String[]> alarmas = Database.selectAlarmas(id);
         for (int i = 0; i < alarmas.size(); i++)
         {
-            Object[] alarm = alarmas.elementAt(i);
+            String[] alarm = alarmas.get(i);
             model.addRow(alarm);
         }
         table.setModel(model);
@@ -145,7 +143,15 @@ public class Caso_Alarmas extends javax.swing.JFrame {
             new String [] {
                 "ID: ", "Nombre", "Hora"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         table.setSelectionForeground(new java.awt.Color(255, 255, 255));
         table.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -159,11 +165,6 @@ public class Caso_Alarmas extends javax.swing.JFrame {
         comboHoras.setBackground(new java.awt.Color(204, 204, 255));
         comboHoras.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         comboHoras.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Hour" }));
-        comboHoras.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboHorasActionPerformed(evt);
-            }
-        });
         jPanel1.add(comboHoras, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, -1, -1));
 
         comboMinutos.setBackground(new java.awt.Color(204, 204, 255));
@@ -216,20 +217,17 @@ public class Caso_Alarmas extends javax.swing.JFrame {
     private void btn_agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agregarActionPerformed
         String nombre = input_nombre.getText();
         String hora = comboHoras.getSelectedItem() + ":" + comboMinutos.getSelectedItem() + ":" + comboSegundos.getSelectedItem();
-
-        boolean insertado = acciones.insertarAlarma(nombre, hora, id);
-        if (insertado == true)
-        {
-            this.limpiarTabla();
-            this.consultarAlarmas();
         
-            crear.programarTodasLasAlarmas();
-            JOptionPane.showMessageDialog(null, "Alarma Agregada :D");
-        } else
-        {
-            JOptionPane.showMessageDialog(null, "ERROR - La alarma no se pudo insertar");
-        }
-                    input_nombre.setText("");
+        Alarma alarm = new Alarma(nombre, "extra", id, hora);
+        
+        Database.insert( alarm );
+
+        this.limpiarTabla();
+        this.consultarAlarmas();
+       
+        JOptionPane.showMessageDialog(null, "Alarma Agregada :D");
+        
+        input_nombre.setText("");
 
         comboHoras.setSelectedItem("Hour");
         comboMinutos.setSelectedItem("Min");
@@ -247,6 +245,7 @@ public class Caso_Alarmas extends javax.swing.JFrame {
 
         dispose();
         new Actividades().setVisible(true);
+        
     }//GEN-LAST:event_jButton_Borrar1ActionPerformed
 
     private void jButton_VolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_VolverActionPerformed
@@ -256,10 +255,6 @@ public class Caso_Alarmas extends javax.swing.JFrame {
         new Actividades().setVisible(true);
         
     }//GEN-LAST:event_jButton_VolverActionPerformed
-
-    private void comboHorasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboHorasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_comboHorasActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

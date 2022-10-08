@@ -302,6 +302,13 @@ public class Database {
         
         return user;
     }
+    public static ArrayList<String[]> selectAlarmas( int id ) {
+        String collection = Collections.ALARMAS.getNombre();
+        String[] keys_alr = {"nombre", "tipo", "hora_sonar"};
+        ArrayList<String[]> data = select( collection, keys_alr, "FK_usuario = " + id );
+        
+        return data;
+    }
     public static ArrayList<String[]> selectAlarmas( String[] keys, String conditional ) {
         String collection = Collections.ALARMAS.getNombre();
         ArrayList<String[]> data = select( collection, keys, conditional );
