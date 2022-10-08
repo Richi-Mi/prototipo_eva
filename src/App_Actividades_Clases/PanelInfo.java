@@ -5,20 +5,19 @@ package App_Actividades_Clases;
  * @author Mendoza Castañeda José Ricardo
  */
 
-public class Familiar extends javax.swing.JPanel {
-    private String nombre, parentesco, cumple;
+public class PanelInfo extends javax.swing.JPanel {
+    private String nombre, hora;
 
-    public Familiar( String nombre, String parentesco, String cumple ) {
+    public PanelInfo( String nombre, String hora ) {
         initComponents();
         this.nombre = nombre;
-        this.parentesco = parentesco;
-        this.cumple = cumple;
+        this.hora = hora;
         
-        this.mostrarFamiliares();
+        this.mostrarData();
     }
-    public void mostrarFamiliares() {
-        lblFamiliar.setText( this.nombre + " es tu " + this.parentesco );
-        lblFecha.setText( this.cumple );
+    public void mostrarData() {
+        lblNombre.setText( this.nombre );
+        lblHora.setText( this.hora );
     }
 
     @SuppressWarnings("unchecked")
@@ -26,27 +25,27 @@ public class Familiar extends javax.swing.JPanel {
     private void initComponents() {
 
         lbl1 = new javax.swing.JLabel();
-        lblFamiliar = new javax.swing.JLabel();
+        lblNombre = new javax.swing.JLabel();
         lbl2 = new javax.swing.JLabel();
-        lblFecha = new javax.swing.JLabel();
+        lblHora = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
         lbl1.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
         lbl1.setForeground(new java.awt.Color(0, 0, 0));
-        lbl1.setText("Familiar: ");
+        lbl1.setText("Medicina:");
 
-        lblFamiliar.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        lblFamiliar.setForeground(new java.awt.Color(0, 0, 0));
-        lblFamiliar.setText("(nombre) es tu (parentesco)");
+        lblNombre.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        lblNombre.setForeground(new java.awt.Color(0, 0, 0));
+        lblNombre.setText("(nombre)");
 
         lbl2.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
         lbl2.setForeground(new java.awt.Color(0, 0, 0));
-        lbl2.setText("Cumpleaños:");
+        lbl2.setText("Hora:");
 
-        lblFecha.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        lblFecha.setForeground(new java.awt.Color(0, 0, 0));
-        lblFecha.setText("(Fecha)");
+        lblHora.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        lblHora.setForeground(new java.awt.Color(0, 0, 0));
+        lblHora.setText("( Hora )");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -58,12 +57,12 @@ public class Familiar extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lbl1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblFamiliar))
+                        .addComponent(lblNombre))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lbl2)
                         .addGap(18, 18, 18)
-                        .addComponent(lblFecha)))
-                .addContainerGap(194, Short.MAX_VALUE))
+                        .addComponent(lblHora)))
+                .addContainerGap(341, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -71,11 +70,11 @@ public class Familiar extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl1)
-                    .addComponent(lblFamiliar))
+                    .addComponent(lblNombre))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl2)
-                    .addComponent(lblFecha))
+                    .addComponent(lblHora))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -84,7 +83,7 @@ public class Familiar extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel lbl1;
     private javax.swing.JLabel lbl2;
-    private javax.swing.JLabel lblFamiliar;
-    private javax.swing.JLabel lblFecha;
+    private javax.swing.JLabel lblHora;
+    private javax.swing.JLabel lblNombre;
     // End of variables declaration//GEN-END:variables
 }

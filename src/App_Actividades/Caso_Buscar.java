@@ -7,7 +7,7 @@ package App_Actividades;
 import App_Actividades_Clases.PanelAlarmas;
 import App_Actividades_Clases.PanelFamiliares;
 import App_Actividades_Clases.PanelMedicinas;
-import App_Actividades_Clases.PanelPasatiempos;
+import App_Actividades_Clases.PanelTitle;
 import interfaces.Actividades;
 import interfaces.Menu;
 import helpers.Sonidos;
@@ -211,7 +211,7 @@ public class Caso_Buscar extends javax.swing.JFrame {
     }//GEN-LAST:event_btnFamActionPerformed
 
     private void btnPasatiemposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPasatiemposActionPerformed
-        PanelPasatiempos panel = new PanelPasatiempos(id);
+        PanelTitle panel = new PanelTitle(id);
         panel.setSize(545, 441);
         panel.setLocation(1, 1);
 

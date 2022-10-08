@@ -10,6 +10,33 @@ import javax.swing.JOptionPane;
 
 // hora_sonar: 00:00:00
 public class Alarma extends TimerTask {
+    
+    // Tipos
+    private static String personales = "personales";
+    private static String extra = "extra";
+    private static String medicina = "medicina";
+    private static String pasatiempos = "pasatiempos";
+    private static String cumpleaños = "cumpleaños";
+
+    public static String getPersonales() {
+        return personales;
+    }
+
+    public static String getExtra() {
+        return extra;
+    }
+
+    public static String getMedicina() {
+        return medicina;
+    }
+
+    public static String getPasatiempos() {
+        return pasatiempos;
+    }
+
+    public static String getCumpleaños() {
+        return cumpleaños;
+    }
 
     private String nombre, tipo, hora_sonar;
     private int id_usuario;

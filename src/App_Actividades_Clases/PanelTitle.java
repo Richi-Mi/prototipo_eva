@@ -2,53 +2,82 @@
 package App_Actividades_Clases;
 
 import java.awt.BorderLayout;
-import java.util.Vector;
+import java.util.ArrayList;
+import database.Database;
 
 /**
  * @author Mendoza Castañeda José Ricardo
  */
-public class PanelMedicinas extends javax.swing.JPanel {
-    private AccionesMedicina metodos = new AccionesMedicina();
+
+public class PanelTitle extends javax.swing.JPanel {
     private int id;
+    private String type;
     
-    public PanelMedicinas( int id ) {
+    public PanelTitle( int id, String type, boolean borrar ) {
         initComponents();
         this.id = id;
-        this.mostrarMedicinas();
+        this.type = type;
+        
+        if( borrar ) 
+            this.mostrarInfoBorrar();
+        else 
+            this.mostrarInfo();
         
     }
-    public void mostrarMedicinas() {
-        Vector<Object[]> medicinas = metodos.getMedicinas( id );
+    public void mostrarInfo() {
+        ArrayList<String[]> alarmas = Database.selectAlarmas( id );
         int posY = 0;
         
         panelInfo.removeAll();
         
-        for( int i = 0; i < medicinas.size(); i++ ) {
-            Object[] medicina = medicinas.elementAt( i );
-            Medicina panel = new Medicina( medicina[1].toString(), medicina[2].toString() );
-            panel.setSize(520, 70);
-            panel.setLocation( 0, posY);
+        for( int i = 0; i < alarmas.size(); i++ ) {
+            String[] alarm = alarmas.get( i );
+            if( type.equals( alarm[1] ) ) {
+                PanelBorrar panel = new PanelBorrar( alarm[0], alarm[2], type );
             
-            posY += 72;
-            panelInfo.add( panel, BorderLayout.CENTER );
+                panel.setSize(520, 70);
+                panel.setLocation( 0, posY);
+            
+                posY += 72;
+                panelInfo.add( panel, BorderLayout.CENTER );
+            }
         }
         panelInfo.revalidate();
         panelInfo.repaint();
+    }
+    public void mostrarInfoBorrar() {
+        ArrayList<String[]> alarmas = Database.selectAlarmas( id );
+        int posY = 0;
         
-        metodos.cerrarConexion();
+        panelInfo.removeAll();
+        
+        for( int i = 0; i < alarmas.size(); i++ ) {
+            String[] alarm = alarmas.get( i );
+            if( type.equals( alarm[1] ) ) {
+                PanelBorrar panel = new PanelBorrar( alarm[0], alarm[2], type );
+            
+                panel.setSize(520, 114);
+                panel.setLocation( 0, posY);
+            
+                posY += 120;
+                panelInfo.add( panel, BorderLayout.CENTER );
+            }
+        }
+        panelInfo.revalidate();
+        panelInfo.repaint();
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lbltitulo = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         panelInfo = new javax.swing.JPanel();
 
-        setBackground(new java.awt.Color(51, 153, 0));
+        setBackground(new java.awt.Color(102, 0, 102));
 
-        lbltitulo.setForeground(new java.awt.Color(255, 255, 255));
-        lbltitulo.setText("Información Medicinas");
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Información Pasatiempos");
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
@@ -70,8 +99,8 @@ public class PanelMedicinas extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(192, 192, 192)
-                .addComponent(lbltitulo)
+                .addGap(187, 187, 187)
+                .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jScrollPane1)
         );
@@ -79,16 +108,16 @@ public class PanelMedicinas extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lbltitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel1)
+                .addGap(12, 12, 12)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 405, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel lbltitulo;
     private javax.swing.JPanel panelInfo;
     // End of variables declaration//GEN-END:variables
 }
