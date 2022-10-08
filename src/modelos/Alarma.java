@@ -18,6 +18,10 @@ public class Alarma extends TimerTask {
     private static String pasatiempos = "pasatiempos";
     private static String cumpleaños = "cumpleaños";
 
+    public Alarma( String nombre ) {
+        this.nombre = nombre;
+    }
+    
     public static String getPersonales() {
         return personales;
     }
@@ -41,6 +45,7 @@ public class Alarma extends TimerTask {
     private String nombre, tipo, hora_sonar;
     private int id_usuario;
 
+    // Constructor para consultas.
     public Alarma( String nombre, String tipo, int id_usuario, String hora ) {
         this.nombre = nombre;
         this.tipo = tipo;
@@ -78,6 +83,7 @@ public class Alarma extends TimerTask {
         // Codigo de Juan Pablo, Alarmas
         Sonidos objeto = new Sonidos();
         objeto.Alarma_Ambiental();
+        
         JOptionPane.showMessageDialog( null, this.nombre);
         objeto.SoundA.stop();
     }
