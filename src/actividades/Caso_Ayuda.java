@@ -4,10 +4,7 @@
 package actividades;
 
 import interfaces.Actividades;
-import interfaces.Menu;
-import app_alarmas.CrearAlarmas;
 import java.util.ArrayList;
-import java.util.Vector;
 import javax.swing.JLabel;
 import javax.swing.JSeparator;
 import database.Database;
@@ -55,7 +52,7 @@ public class Caso_Ayuda extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 480, 340));
 
-        jButton_Volver.setBackground(new java.awt.Color(204, 204, 255));
+        jButton_Volver.setBackground(new java.awt.Color(153, 153, 255));
         jButton_Volver.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButton_Volver.setForeground(new java.awt.Color(0, 0, 0));
         jButton_Volver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_Actividades.png"))); // NOI18N
@@ -67,28 +64,25 @@ public class Caso_Ayuda extends javax.swing.JFrame {
         });
         jPanel1.add(jButton_Volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 370, -1, -1));
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel2.setBackground(new java.awt.Color(102, 102, 255));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Numeros de Ayuda");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addGap(0, 432, Short.MAX_VALUE))
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, -1));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

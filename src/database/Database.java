@@ -31,7 +31,7 @@ public class Database {
         con = null;
         try
         {
-            Class.forName(driver);
+            Class.forName( driver );
             // Nos conectamos a la bd
             con = (Connection) DriverManager.getConnection(url, user, pass);
             // Si la conexion fue exitosa mostramos un mensaje de conexion exitosa

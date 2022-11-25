@@ -45,6 +45,7 @@ public class Inicio extends javax.swing.JFrame {
         jComboBox_Idiomas = new javax.swing.JComboBox<>();
         jSeparator1 = new javax.swing.JSeparator();
         jPanel_Header = new javax.swing.JPanel();
+        jLabel_HeaderActividades = new javax.swing.JLabel();
         jLabel_Salir = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -91,9 +92,9 @@ public class Inicio extends javax.swing.JFrame {
         jLabel_Sexo.setText("SEXO");
         jPanel1.add(jLabel_Sexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, -1));
 
-        jButton_Continuar.setBackground(new java.awt.Color(204, 204, 255));
+        jButton_Continuar.setBackground(new java.awt.Color(0, 0, 153));
         jButton_Continuar.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jButton_Continuar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_Continuar.png"))); // NOI18N
+        jButton_Continuar.setForeground(new java.awt.Color(255, 255, 255));
         jButton_Continuar.setText("Continuar");
         jButton_Continuar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton_Continuar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -109,7 +110,7 @@ public class Inicio extends javax.swing.JFrame {
                 jButton_ContinuarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton_Continuar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 320, -1, -1));
+        jPanel1.add(jButton_Continuar, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 320, 320, -1));
 
         jComboBox_Sexos.setBackground(new java.awt.Color(153, 153, 255));
         jComboBox_Sexos.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -127,7 +128,7 @@ public class Inicio extends javax.swing.JFrame {
         jSeparator1.setForeground(new java.awt.Color(102, 102, 102));
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 420, -1));
 
-        jPanel_Header.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel_Header.setBackground(new java.awt.Color(102, 102, 255));
         jPanel_Header.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 jPanel_HeaderMouseDragged(evt);
@@ -138,9 +139,14 @@ public class Inicio extends javax.swing.JFrame {
                 jPanel_HeaderMousePressed(evt);
             }
         });
-        jPanel_Header.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel_Header.setLayout(new java.awt.GridLayout(1, 0));
 
-        jLabel_Salir.setBackground(java.awt.Color.blue);
+        jLabel_HeaderActividades.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel_HeaderActividades.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel_HeaderActividades.setText(" Inicio");
+        jPanel_Header.add(jLabel_HeaderActividades);
+
+        jLabel_Salir.setBackground(new java.awt.Color(255, 51, 51));
         jLabel_Salir.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
         jLabel_Salir.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_Salir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -158,9 +164,9 @@ public class Inicio extends javax.swing.JFrame {
                 jLabel_SalirMouseExited(evt);
             }
         });
-        jPanel_Header.add(jLabel_Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 0, 40, -1));
+        jPanel_Header.add(jLabel_Salir);
 
-        jPanel1.add(jPanel_Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, -1));
+        jPanel1.add(jPanel_Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -252,12 +258,12 @@ public class Inicio extends javax.swing.JFrame {
     private void jLabel_SalirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_SalirMouseEntered
         // Colorear cuando pasa encima el cursor
         jLabel_Salir.setBackground(Color.red);
-        jLabel_Salir.setForeground(Color.black);
+        jLabel_Salir.setForeground(Color.WHITE);
     }//GEN-LAST:event_jLabel_SalirMouseEntered
 
     private void jLabel_SalirMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_SalirMouseExited
         // colorear cuando sale el cursor
-        jLabel_Salir.setBackground(Color.BLUE);
+        jLabel_Salir.setBackground( new Color( 255,102,102 ) );
         jLabel_Salir.setForeground(Color.white);
     }//GEN-LAST:event_jLabel_SalirMouseExited
 
@@ -335,6 +341,7 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JButton jButton_Continuar;
     private javax.swing.JComboBox<String> jComboBox_Idiomas;
     private javax.swing.JComboBox<String> jComboBox_Sexos;
+    private javax.swing.JLabel jLabel_HeaderActividades;
     private javax.swing.JLabel jLabel_Idioma;
     private javax.swing.JLabel jLabel_Salir;
     private javax.swing.JLabel jLabel_Sexo;

@@ -66,8 +66,8 @@ public class Personales extends javax.swing.JFrame {
         jLabel_BirthdayPesona1 = new javax.swing.JLabel();
         jTextField_Birthday = new javax.swing.JTextField();
         jPanel_Header = new javax.swing.JPanel();
-        jLabel_Salir = new javax.swing.JLabel();
         jLabel_HeaderActividades = new javax.swing.JLabel();
+        jLabel_Salir = new javax.swing.JLabel();
         jButton_Borrar1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -85,7 +85,7 @@ public class Personales extends javax.swing.JFrame {
         jTextField_Direccion.setBorder(null);
         jPanel1.add(jTextField_Direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 280, 30));
 
-        jButton_SaveDP.setBackground(new java.awt.Color(204, 204, 255));
+        jButton_SaveDP.setBackground(new java.awt.Color(102, 102, 255));
         jButton_SaveDP.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButton_SaveDP.setForeground(new java.awt.Color(0, 0, 0));
         jButton_SaveDP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_Guardar.png"))); // NOI18N
@@ -138,7 +138,7 @@ public class Personales extends javax.swing.JFrame {
         jTextField_Birthday.setBorder(null);
         jPanel1.add(jTextField_Birthday, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 280, 30));
 
-        jPanel_Header.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel_Header.setBackground(new java.awt.Color(102, 102, 255));
         jPanel_Header.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 jPanel_HeaderMouseDragged(evt);
@@ -149,9 +149,14 @@ public class Personales extends javax.swing.JFrame {
                 jPanel_HeaderMousePressed(evt);
             }
         });
-        jPanel_Header.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel_Header.setLayout(new java.awt.GridLayout());
 
-        jLabel_Salir.setBackground(java.awt.Color.blue);
+        jLabel_HeaderActividades.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel_HeaderActividades.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel_HeaderActividades.setText("Datos personales");
+        jPanel_Header.add(jLabel_HeaderActividades);
+
+        jLabel_Salir.setBackground(new java.awt.Color(255, 51, 51));
         jLabel_Salir.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
         jLabel_Salir.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_Salir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -169,16 +174,11 @@ public class Personales extends javax.swing.JFrame {
                 jLabel_SalirMouseExited(evt);
             }
         });
-        jPanel_Header.add(jLabel_Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 0, 40, -1));
+        jPanel_Header.add(jLabel_Salir);
 
-        jLabel_HeaderActividades.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel_HeaderActividades.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel_HeaderActividades.setText("Datos personales");
-        jPanel_Header.add(jLabel_HeaderActividades, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jPanel1.add(jPanel_Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 40));
 
-        jPanel1.add(jPanel_Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, -1));
-
-        jButton_Borrar1.setBackground(new java.awt.Color(204, 204, 255));
+        jButton_Borrar1.setBackground(new java.awt.Color(102, 102, 255));
         jButton_Borrar1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButton_Borrar1.setForeground(new java.awt.Color(0, 0, 0));
         jButton_Borrar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_Actividades.png"))); // NOI18N
@@ -275,12 +275,12 @@ public class Personales extends javax.swing.JFrame {
     private void jLabel_SalirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_SalirMouseEntered
         // Colorear cuando pasa encima el cursor
         jLabel_Salir.setBackground(Color.red);
-        jLabel_Salir.setForeground(Color.black);
+        jLabel_Salir.setForeground(Color.WHITE);
     }//GEN-LAST:event_jLabel_SalirMouseEntered
 
     private void jLabel_SalirMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_SalirMouseExited
         // colorear cuando sale el cursor
-        jLabel_Salir.setBackground(Color.BLUE);
+        jLabel_Salir.setBackground( new Color( 255,102,102 ) );
         jLabel_Salir.setForeground(Color.white);
     }//GEN-LAST:event_jLabel_SalirMouseExited
 

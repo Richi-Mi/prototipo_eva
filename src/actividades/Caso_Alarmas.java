@@ -11,7 +11,6 @@ import database.Database;
 import helpers.Sonidos;
 import app_alarmas.CrearAlarmas;
 import java.util.ArrayList;
-import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import modelos.Alarma;
@@ -122,7 +121,7 @@ public class Caso_Alarmas extends javax.swing.JFrame {
         lbl_hora.setText("Hora a sonar: ");
         jPanel1.add(lbl_hora, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
 
-        btn_agregar.setBackground(new java.awt.Color(204, 204, 255));
+        btn_agregar.setBackground(new java.awt.Color(153, 153, 255));
         btn_agregar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         btn_agregar.setForeground(new java.awt.Color(0, 0, 0));
         btn_agregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_Alarma.png"))); // NOI18N
@@ -180,7 +179,7 @@ public class Caso_Alarmas extends javax.swing.JFrame {
         comboSegundos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seg" }));
         jPanel1.add(comboSegundos, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 110, -1, -1));
 
-        jButton_Volver.setBackground(new java.awt.Color(204, 204, 255));
+        jButton_Volver.setBackground(new java.awt.Color(153, 153, 255));
         jButton_Volver.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButton_Volver.setForeground(new java.awt.Color(0, 0, 0));
         jButton_Volver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_Actividades.png"))); // NOI18N
@@ -192,16 +191,18 @@ public class Caso_Alarmas extends javax.swing.JFrame {
         });
         jPanel1.add(jButton_Volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 160, 200, -1));
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel2.setBackground(new java.awt.Color(102, 102, 255));
+        jPanel2.setForeground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lbl_title.setBackground(new java.awt.Color(255, 255, 255));
         lbl_title.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        lbl_title.setForeground(new java.awt.Color(0, 0, 0));
+        lbl_title.setForeground(new java.awt.Color(255, 255, 255));
+        lbl_title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbl_title.setText("Agregar Alarma");
-        jPanel2.add(lbl_title, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jPanel2.add(lbl_title, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 30));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, -1));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

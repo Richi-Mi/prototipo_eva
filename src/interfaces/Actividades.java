@@ -6,6 +6,8 @@ import actividades.Caso_Buscar;
 import actividades.Caso_Borrar;
 import helpers.Sonidos;
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 
 /**
  * @author Juan Pablo Figueroa.
@@ -15,11 +17,24 @@ import java.awt.Color;
 public class Actividades extends javax.swing.JFrame {
 
     private int xMouse, yMouse;
+    Dimension screenSize;
     
     public Actividades() {
+                
+        screenSize = Toolkit.getDefaultToolkit().getScreenSize(); 
         
         initComponents();
         setLocationRelativeTo(null);
+        
+        this.setExtendedState( this.MAXIMIZED_BOTH );
+        this.setResizable( false );
+
+        
+        jPanel_fondo.setMinimumSize( screenSize );
+        
+        Dimension header = new Dimension((int) screenSize.getWidth(), 30);
+        System.out.println( header.getWidth() + ", " + header.getHeight());
+        jPanel_Header.setMinimumSize( header );
         
         // Sonido
         Sonidos objeto = new Sonidos();
@@ -31,6 +46,9 @@ public class Actividades extends javax.swing.JFrame {
 
         jButton1 = new javax.swing.JButton();
         jPanel_fondo = new javax.swing.JPanel();
+        jPanel_Header = new javax.swing.JPanel();
+        jLabel_HeaderActividades = new javax.swing.JLabel();
+        jLabel_Salir = new javax.swing.JLabel();
         rSLabelFecha = new rojeru_san.RSLabelFecha();
         rSLabelHora = new rojeru_san.RSLabelHora();
         jButton_AcercaEva = new javax.swing.JButton();
@@ -40,9 +58,6 @@ public class Actividades extends javax.swing.JFrame {
         jButton_Menu = new javax.swing.JButton();
         jButton_Ayuda = new javax.swing.JButton();
         jLabel_Invisible = new javax.swing.JLabel();
-        jPanel_Header = new javax.swing.JPanel();
-        jLabel_Salir = new javax.swing.JLabel();
-        jLabel_HeaderActividades = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         jButton1.setText("jButton1");
@@ -54,18 +69,63 @@ public class Actividades extends javax.swing.JFrame {
         jPanel_fondo.setBackground(new java.awt.Color(255, 255, 255));
         jPanel_fondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel_Header.setBackground(new java.awt.Color(102, 102, 255));
+        jPanel_Header.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel_Header.setMinimumSize(new Dimension((int) screenSize.getWidth(), 30));
+        jPanel_Header.setPreferredSize(getMinimumSize());
+        jPanel_Header.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jPanel_HeaderMouseDragged(evt);
+            }
+        });
+        jPanel_Header.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jPanel_HeaderMousePressed(evt);
+            }
+        });
+        jPanel_Header.setLayout(new java.awt.GridLayout());
+
+        jLabel_HeaderActividades.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel_HeaderActividades.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel_HeaderActividades.setText("  Actividades");
+        jPanel_Header.add(jLabel_HeaderActividades);
+
+        jLabel_Salir.setBackground(new java.awt.Color(255, 102, 102));
+        jLabel_Salir.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
+        jLabel_Salir.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel_Salir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_Salir.setText("X");
+        jLabel_Salir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jLabel_Salir.setOpaque(true);
+        jLabel_Salir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel_SalirMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel_SalirMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel_SalirMouseExited(evt);
+            }
+        });
+        jPanel_Header.add(jLabel_Salir);
+
+        jPanel_fondo.add(jPanel_Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 960, 30));
+        jPanel_Header.getAccessibleContext().setAccessibleDescription("");
+
         rSLabelFecha.setBackground(new java.awt.Color(204, 204, 204));
         rSLabelFecha.setForeground(new java.awt.Color(0, 0, 0));
         rSLabelFecha.setFont(new java.awt.Font("Roboto Bold", 1, 24)); // NOI18N
         rSLabelFecha.setFormato("EEEEEEE/dd/MMMM/yyyy");
-        jPanel_fondo.add(rSLabelFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 130, 290, -1));
+        jPanel_fondo.add(rSLabelFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 130, 390, -1));
 
         rSLabelHora.setBackground(new java.awt.Color(102, 102, 255));
         rSLabelHora.setFont(new java.awt.Font("Roboto Bold", 1, 36)); // NOI18N
-        jPanel_fondo.add(rSLabelHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 40, 290, 100));
+        jPanel_fondo.add(rSLabelHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 40, 290, 100));
 
         jButton_AcercaEva.setBackground(new java.awt.Color(204, 204, 255));
         jButton_AcercaEva.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jButton_AcercaEva.setForeground(new java.awt.Color(0, 0, 0));
         jButton_AcercaEva.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_Pregunta.png"))); // NOI18N
         jButton_AcercaEva.setText("Acerca de eva");
         jButton_AcercaEva.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -86,6 +146,7 @@ public class Actividades extends javax.swing.JFrame {
 
         jButton_Borrar.setBackground(new java.awt.Color(204, 204, 255));
         jButton_Borrar.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jButton_Borrar.setForeground(new java.awt.Color(0, 0, 0));
         jButton_Borrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_Borrar.png"))); // NOI18N
         jButton_Borrar.setText("Borrar");
         jButton_Borrar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -106,6 +167,7 @@ public class Actividades extends javax.swing.JFrame {
 
         jButton_Alarmas.setBackground(new java.awt.Color(204, 204, 255));
         jButton_Alarmas.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jButton_Alarmas.setForeground(new java.awt.Color(0, 0, 0));
         jButton_Alarmas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_Alarma.png"))); // NOI18N
         jButton_Alarmas.setText("Programar Alarmas");
         jButton_Alarmas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -126,6 +188,7 @@ public class Actividades extends javax.swing.JFrame {
 
         jButton_Buscar.setBackground(new java.awt.Color(204, 204, 255));
         jButton_Buscar.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jButton_Buscar.setForeground(new java.awt.Color(0, 0, 0));
         jButton_Buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_Buscar.png"))); // NOI18N
         jButton_Buscar.setText("Buscar (Informacion ingresada en el menu)");
         jButton_Buscar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -146,8 +209,9 @@ public class Actividades extends javax.swing.JFrame {
 
         jButton_Menu.setBackground(new java.awt.Color(204, 204, 255));
         jButton_Menu.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jButton_Menu.setForeground(new java.awt.Color(0, 0, 0));
         jButton_Menu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_Actividades.png"))); // NOI18N
-        jButton_Menu.setText("Menu");
+        jButton_Menu.setText(" Menu");
         jButton_Menu.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton_Menu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -166,6 +230,7 @@ public class Actividades extends javax.swing.JFrame {
 
         jButton_Ayuda.setBackground(new java.awt.Color(204, 204, 255));
         jButton_Ayuda.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jButton_Ayuda.setForeground(new java.awt.Color(0, 0, 0));
         jButton_Ayuda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_Ayuda.png"))); // NOI18N
         jButton_Ayuda.setText("Ayuda (En casos de emergencia)");
         jButton_Ayuda.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -185,71 +250,10 @@ public class Actividades extends javax.swing.JFrame {
         jPanel_fondo.add(jButton_Ayuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 560, -1));
         jPanel_fondo.add(jLabel_Invisible, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 420, 40, 20));
 
-        jPanel_Header.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel_Header.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseDragged(java.awt.event.MouseEvent evt) {
-                jPanel_HeaderMouseDragged(evt);
-            }
-        });
-        jPanel_Header.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jPanel_HeaderMousePressed(evt);
-            }
-        });
-
-        jLabel_Salir.setBackground(java.awt.Color.blue);
-        jLabel_Salir.setFont(new java.awt.Font("Arial Black", 1, 24)); // NOI18N
-        jLabel_Salir.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel_Salir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel_Salir.setText("X");
-        jLabel_Salir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jLabel_Salir.setOpaque(true);
-        jLabel_Salir.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel_SalirMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel_SalirMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel_SalirMouseExited(evt);
-            }
-        });
-
-        jLabel_HeaderActividades.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel_HeaderActividades.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel_HeaderActividades.setText("Actividades");
-
-        javax.swing.GroupLayout jPanel_HeaderLayout = new javax.swing.GroupLayout(jPanel_Header);
-        jPanel_Header.setLayout(jPanel_HeaderLayout);
-        jPanel_HeaderLayout.setHorizontalGroup(
-            jPanel_HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_HeaderLayout.createSequentialGroup()
-                .addComponent(jLabel_HeaderActividades)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 716, Short.MAX_VALUE)
-                .addComponent(jLabel_Salir, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jPanel_HeaderLayout.setVerticalGroup(
-            jPanel_HeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel_Salir, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jLabel_HeaderActividades, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        jPanel_fondo.add(jPanel_Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 860, 40));
-
         jLabel1.setText("Espacio de alarmas");
         jPanel_fondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 220, 230, 240));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel_fondo, javax.swing.GroupLayout.PREFERRED_SIZE, 856, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel_fondo, javax.swing.GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE)
-        );
+        getContentPane().add(jPanel_fondo, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -280,12 +284,12 @@ public class Actividades extends javax.swing.JFrame {
     private void jLabel_SalirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_SalirMouseEntered
         // Colorear cuando pasa encima el cursor
         jLabel_Salir.setBackground(Color.red);
-        jLabel_Salir.setForeground(Color.black);
+        jLabel_Salir.setForeground(Color.WHITE);
     }//GEN-LAST:event_jLabel_SalirMouseEntered
 
     private void jLabel_SalirMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_SalirMouseExited
         // colorear cuando sale el cursor
-        jLabel_Salir.setBackground(Color.BLUE);
+        jLabel_Salir.setBackground( new Color( 255,102,102 ) );
         jLabel_Salir.setForeground(Color.white);
     }//GEN-LAST:event_jLabel_SalirMouseExited
 

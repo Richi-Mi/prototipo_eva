@@ -8,6 +8,8 @@ import menuInterfaces.Personales;
 import menuInterfaces.Pasatiempos;
 import helpers.Sonidos;
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.swing.JFrame;
@@ -22,7 +24,20 @@ public class Menu extends javax.swing.JFrame {
     public Menu() {
         initComponents();
         setLocationRelativeTo(null);
+        
+        this.setExtendedState( this.MAXIMIZED_BOTH );
+        this.setResizable( true );
+        
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize(); 
+        
+        jPanel1.setMinimumSize( screenSize );
+        
+        Dimension header = new Dimension((int) screenSize.getWidth(), 30);
+        System.out.println( header.getWidth() + ", " + header.getHeight());
+        jPanel_Header.setMinimumSize( header );
+        
         cerrar();
+       
         Sonidos objeto = new Sonidos();
         objeto.Caso_Menu2();
     }
@@ -31,69 +46,63 @@ public class Menu extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton_NombresImporantes = new javax.swing.JButton();
-        jButton_Pasatiempos = new javax.swing.JButton();
+        jPanel_Header = new javax.swing.JPanel();
+        jLabel_HeaderActividades = new javax.swing.JLabel();
+        jLabel_Salir = new javax.swing.JLabel();
         jButton_HoraDormir = new javax.swing.JButton();
         jButton_Volver = new javax.swing.JButton();
         jButton_Contactos = new javax.swing.JButton();
         jButton_DatosPersonales = new javax.swing.JButton();
         jButton_Medicinas = new javax.swing.JButton();
-        jPanel_Header = new javax.swing.JPanel();
-        jLabel_Salir = new javax.swing.JLabel();
-        jLabel_HeaderActividades = new javax.swing.JLabel();
+        jButton_NombresImporantes = new javax.swing.JButton();
+        jButton_Pasatiempos = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton_NombresImporantes.setBackground(new java.awt.Color(204, 204, 255));
-        jButton_NombresImporantes.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jButton_NombresImporantes.setForeground(new java.awt.Color(0, 0, 0));
-        jButton_NombresImporantes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_PersonaImportante.png"))); // NOI18N
-        jButton_NombresImporantes.setText("Dime el nombre y cumpleaños depersonas importantes para ti");
-        jButton_NombresImporantes.setBorder(null);
-        jButton_NombresImporantes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton_NombresImporantes.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton_NombresImporantes.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jButton_NombresImporantesMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jButton_NombresImporantesMouseExited(evt);
+        jPanel_Header.setBackground(new java.awt.Color(102, 102, 255));
+        jPanel_Header.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jPanel_HeaderMouseDragged(evt);
             }
         });
-        jButton_NombresImporantes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_NombresImporantesActionPerformed(evt);
+        jPanel_Header.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jPanel_HeaderMousePressed(evt);
             }
         });
-        jPanel1.add(jButton_NombresImporantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 660, 40));
+        jPanel_Header.setLayout(new java.awt.GridLayout());
 
-        jButton_Pasatiempos.setBackground(new java.awt.Color(204, 204, 255));
-        jButton_Pasatiempos.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jButton_Pasatiempos.setForeground(new java.awt.Color(0, 0, 0));
-        jButton_Pasatiempos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_Pasatiempo.png"))); // NOI18N
-        jButton_Pasatiempos.setText("Que es lo que te gusta hacer a diario u ocacionalmente");
-        jButton_Pasatiempos.setBorder(null);
-        jButton_Pasatiempos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton_Pasatiempos.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton_Pasatiempos.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLabel_HeaderActividades.setBackground(new java.awt.Color(0, 153, 102));
+        jLabel_HeaderActividades.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLabel_HeaderActividades.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel_HeaderActividades.setText("   Menu");
+        jPanel_Header.add(jLabel_HeaderActividades);
+
+        jLabel_Salir.setBackground(new java.awt.Color(255, 102, 102));
+        jLabel_Salir.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        jLabel_Salir.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel_Salir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel_Salir.setText("X");
+        jLabel_Salir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jLabel_Salir.setOpaque(true);
+        jLabel_Salir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel_SalirMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jButton_PasatiemposMouseEntered(evt);
+                jLabel_SalirMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jButton_PasatiemposMouseExited(evt);
+                jLabel_SalirMouseExited(evt);
             }
         });
-        jButton_Pasatiempos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_PasatiemposActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton_Pasatiempos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 660, 40));
+        jPanel_Header.add(jLabel_Salir);
+
+        jPanel1.add(jPanel_Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 30));
 
         jButton_HoraDormir.setBackground(new java.awt.Color(204, 204, 255));
         jButton_HoraDormir.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -210,51 +219,59 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel1.add(jButton_Medicinas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 660, 40));
 
-        jPanel_Header.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel_Header.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseDragged(java.awt.event.MouseEvent evt) {
-                jPanel_HeaderMouseDragged(evt);
-            }
-        });
-        jPanel_Header.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                jPanel_HeaderMousePressed(evt);
-            }
-        });
-        jPanel_Header.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel_Salir.setBackground(java.awt.Color.blue);
-        jLabel_Salir.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
-        jLabel_Salir.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel_Salir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel_Salir.setText("X");
-        jLabel_Salir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jLabel_Salir.setOpaque(true);
-        jLabel_Salir.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel_SalirMouseClicked(evt);
-            }
+        jButton_NombresImporantes.setBackground(new java.awt.Color(204, 204, 255));
+        jButton_NombresImporantes.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jButton_NombresImporantes.setForeground(new java.awt.Color(0, 0, 0));
+        jButton_NombresImporantes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_PersonaImportante.png"))); // NOI18N
+        jButton_NombresImporantes.setText("  Dime el nombre y cumpleaños depersonas importantes para ti");
+        jButton_NombresImporantes.setAlignmentX(1.0F);
+        jButton_NombresImporantes.setBorder(null);
+        jButton_NombresImporantes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButton_NombresImporantes.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton_NombresImporantes.setMargin(new java.awt.Insets(5, 14, 5, 14));
+        jButton_NombresImporantes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel_SalirMouseEntered(evt);
+                jButton_NombresImporantesMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel_SalirMouseExited(evt);
+                jButton_NombresImporantesMouseExited(evt);
             }
         });
-        jPanel_Header.add(jLabel_Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 0, 40, -1));
+        jButton_NombresImporantes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_NombresImporantesActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton_NombresImporantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 660, 40));
 
-        jLabel_HeaderActividades.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel_HeaderActividades.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel_HeaderActividades.setText("Menu");
-        jPanel_Header.add(jLabel_HeaderActividades, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        jPanel1.add(jPanel_Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, -1));
+        jButton_Pasatiempos.setBackground(new java.awt.Color(204, 204, 255));
+        jButton_Pasatiempos.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jButton_Pasatiempos.setForeground(new java.awt.Color(0, 0, 0));
+        jButton_Pasatiempos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_Pasatiempo.png"))); // NOI18N
+        jButton_Pasatiempos.setText("Que es lo que te gusta hacer a diario u ocacionalmente");
+        jButton_Pasatiempos.setBorder(null);
+        jButton_Pasatiempos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButton_Pasatiempos.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton_Pasatiempos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton_PasatiemposMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton_PasatiemposMouseExited(evt);
+            }
+        });
+        jButton_Pasatiempos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_PasatiemposActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton_Pasatiempos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 660, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 681, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -354,7 +371,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void jLabel_SalirMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_SalirMouseExited
         // colorear cuando sale el cursor
-        jLabel_Salir.setBackground(Color.BLUE);
+        jLabel_Salir.setBackground( new Color( 255,102,102 ) );
         jLabel_Salir.setForeground(Color.white);
     }//GEN-LAST:event_jLabel_SalirMouseExited
 

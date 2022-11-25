@@ -24,6 +24,7 @@ public class HacerSonar extends Thread {
         Timer timer = new Timer();
         Alarma alarma = new Alarma( nombre );
         
+        System.out.println("HOla");
         timer.schedule(alarma, sonar);
     }
     

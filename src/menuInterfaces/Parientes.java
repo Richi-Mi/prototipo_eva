@@ -62,8 +62,8 @@ public class Parientes extends javax.swing.JFrame {
         jButton_SaveNumber = new javax.swing.JButton();
         jButton_Borrar1 = new javax.swing.JButton();
         jPanel_Header = new javax.swing.JPanel();
-        jLabel_Salir = new javax.swing.JLabel();
         jLabel_HeaderActividades = new javax.swing.JLabel();
+        jLabel_Salir = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -86,45 +86,45 @@ public class Parientes extends javax.swing.JFrame {
         jLabel_NumeroPersona1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel_NumeroPersona1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_Contactos1.png"))); // NOI18N
         jLabel_NumeroPersona1.setText("DATOS DE LA PERSONA");
-        jPanel1.add(jLabel_NumeroPersona1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 500, -1));
+        jPanel1.add(jLabel_NumeroPersona1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 500, -1));
 
         jTextField_NumberPersona1.setBackground(new java.awt.Color(255, 255, 255));
         jTextField_NumberPersona1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jTextField_NumberPersona1.setForeground(new java.awt.Color(0, 0, 0));
         jTextField_NumberPersona1.setBorder(null);
-        jPanel1.add(jTextField_NumberPersona1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 330, 30));
+        jPanel1.add(jTextField_NumberPersona1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, 330, 30));
 
         jLabel_NamePesona1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel_NamePesona1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel_NamePesona1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_IngresaDato.png"))); // NOI18N
         jLabel_NamePesona1.setText("Nombre");
-        jPanel1.add(jLabel_NamePesona1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
+        jPanel1.add(jLabel_NamePesona1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
 
         jLabel_KinshipPesona1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel_KinshipPesona1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel_KinshipPesona1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_PersonaImportante.png"))); // NOI18N
         jLabel_KinshipPesona1.setText("Parentesco");
-        jPanel1.add(jLabel_KinshipPesona1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
+        jPanel1.add(jLabel_KinshipPesona1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, -1));
 
         jLabel_BirthdayPesona1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel_BirthdayPesona1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel_BirthdayPesona1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_Contactos.png"))); // NOI18N
         jLabel_BirthdayPesona1.setText("Numero");
-        jPanel1.add(jLabel_BirthdayPesona1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
+        jPanel1.add(jLabel_BirthdayPesona1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, -1, -1));
 
         jTextField_NamePersona1.setBackground(new java.awt.Color(255, 255, 255));
         jTextField_NamePersona1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jTextField_NamePersona1.setForeground(new java.awt.Color(0, 0, 0));
         jTextField_NamePersona1.setBorder(null);
-        jPanel1.add(jTextField_NamePersona1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, 330, 30));
+        jPanel1.add(jTextField_NamePersona1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 330, 30));
 
         jTextField_KinshipPersona1.setBackground(new java.awt.Color(255, 255, 255));
         jTextField_KinshipPersona1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jTextField_KinshipPersona1.setForeground(new java.awt.Color(0, 0, 0));
         jTextField_KinshipPersona1.setBorder(null);
-        jPanel1.add(jTextField_KinshipPersona1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 330, 30));
+        jPanel1.add(jTextField_KinshipPersona1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 330, 30));
 
-        jButton_SaveNumber.setBackground(new java.awt.Color(204, 204, 255));
+        jButton_SaveNumber.setBackground(new java.awt.Color(102, 102, 255));
         jButton_SaveNumber.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButton_SaveNumber.setForeground(new java.awt.Color(0, 0, 0));
         jButton_SaveNumber.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_Guardar.png"))); // NOI18N
@@ -137,7 +137,7 @@ public class Parientes extends javax.swing.JFrame {
         });
         jPanel1.add(jButton_SaveNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, -1, -1));
 
-        jButton_Borrar1.setBackground(new java.awt.Color(204, 204, 255));
+        jButton_Borrar1.setBackground(new java.awt.Color(102, 102, 255));
         jButton_Borrar1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButton_Borrar1.setForeground(new java.awt.Color(0, 0, 0));
         jButton_Borrar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_Actividades.png"))); // NOI18N
@@ -150,7 +150,7 @@ public class Parientes extends javax.swing.JFrame {
         });
         jPanel1.add(jButton_Borrar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, -1, -1));
 
-        jPanel_Header.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel_Header.setBackground(new java.awt.Color(102, 102, 255));
         jPanel_Header.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 jPanel_HeaderMouseDragged(evt);
@@ -161,9 +161,14 @@ public class Parientes extends javax.swing.JFrame {
                 jPanel_HeaderMousePressed(evt);
             }
         });
-        jPanel_Header.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel_Header.setLayout(new java.awt.GridLayout(1, 0));
 
-        jLabel_Salir.setBackground(java.awt.Color.blue);
+        jLabel_HeaderActividades.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel_HeaderActividades.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel_HeaderActividades.setText("Contactos importantes");
+        jPanel_Header.add(jLabel_HeaderActividades);
+
+        jLabel_Salir.setBackground(new java.awt.Color(255, 51, 51));
         jLabel_Salir.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
         jLabel_Salir.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_Salir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -181,14 +186,9 @@ public class Parientes extends javax.swing.JFrame {
                 jLabel_SalirMouseExited(evt);
             }
         });
-        jPanel_Header.add(jLabel_Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 0, 40, -1));
+        jPanel_Header.add(jLabel_Salir);
 
-        jLabel_HeaderActividades.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel_HeaderActividades.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel_HeaderActividades.setText("Contactos importantes");
-        jPanel_Header.add(jLabel_HeaderActividades, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        jPanel1.add(jPanel_Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, -1));
+        jPanel1.add(jPanel_Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -270,12 +270,12 @@ public class Parientes extends javax.swing.JFrame {
     private void jLabel_SalirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_SalirMouseEntered
         // Colorear cuando pasa encima el cursor
         jLabel_Salir.setBackground(Color.red);
-        jLabel_Salir.setForeground(Color.black);
+        jLabel_Salir.setForeground(Color.WHITE);
     }//GEN-LAST:event_jLabel_SalirMouseEntered
 
     private void jLabel_SalirMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_SalirMouseExited
         // colorear cuando sale el cursor
-        jLabel_Salir.setBackground(Color.BLUE);
+        jLabel_Salir.setBackground( new Color( 255,102,102 ) );
         jLabel_Salir.setForeground(Color.white);
     }//GEN-LAST:event_jLabel_SalirMouseExited
 

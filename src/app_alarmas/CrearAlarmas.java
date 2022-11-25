@@ -43,7 +43,6 @@ public class CrearAlarmas {
             
             HacerSonar hilo = new HacerSonar( name, sonar );
             hilos.add( hilo );
-            
             hilo.start();
         }
     }
