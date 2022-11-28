@@ -57,10 +57,12 @@ public class Caso_Buscar extends javax.swing.JFrame {
 
         paneltitle.setBackground(new java.awt.Color(204, 204, 204));
 
-        lblTitle.setBackground(new java.awt.Color(0, 0, 0));
+        lblTitle.setBackground(new java.awt.Color(0, 102, 102));
         lblTitle.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        lblTitle.setForeground(new java.awt.Color(0, 0, 0));
+        lblTitle.setForeground(new java.awt.Color(255, 255, 255));
+        lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("Buscar Información");
+        lblTitle.setOpaque(true);
 
         panelPrincipal.setBackground(new java.awt.Color(255, 255, 255));
         panelPrincipal.setLayout(new java.awt.GridLayout(1, 0));
@@ -68,7 +70,7 @@ public class Caso_Buscar extends javax.swing.JFrame {
 
         panelBtns.setBackground(new java.awt.Color(255, 255, 255));
 
-        btnFam.setBackground(new java.awt.Color(204, 204, 255));
+        btnFam.setBackground(new java.awt.Color(0, 153, 153));
         btnFam.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         btnFam.setForeground(new java.awt.Color(0, 0, 0));
         btnFam.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_Familiares.png"))); // NOI18N
@@ -80,7 +82,7 @@ public class Caso_Buscar extends javax.swing.JFrame {
             }
         });
 
-        btnPasatiempos.setBackground(new java.awt.Color(204, 204, 255));
+        btnPasatiempos.setBackground(new java.awt.Color(0, 153, 153));
         btnPasatiempos.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         btnPasatiempos.setForeground(new java.awt.Color(0, 0, 0));
         btnPasatiempos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_Pasatiempo.png"))); // NOI18N
@@ -92,7 +94,7 @@ public class Caso_Buscar extends javax.swing.JFrame {
             }
         });
 
-        btnMedicinas.setBackground(new java.awt.Color(204, 204, 255));
+        btnMedicinas.setBackground(new java.awt.Color(0, 153, 153));
         btnMedicinas.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         btnMedicinas.setForeground(new java.awt.Color(0, 0, 0));
         btnMedicinas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_Medicinas.png"))); // NOI18N
@@ -104,7 +106,7 @@ public class Caso_Buscar extends javax.swing.JFrame {
             }
         });
 
-        btnAlarmas.setBackground(new java.awt.Color(204, 204, 255));
+        btnAlarmas.setBackground(new java.awt.Color(0, 153, 153));
         btnAlarmas.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         btnAlarmas.setForeground(new java.awt.Color(0, 0, 0));
         btnAlarmas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_Alarma.png"))); // NOI18N
@@ -116,7 +118,7 @@ public class Caso_Buscar extends javax.swing.JFrame {
             }
         });
 
-        jButton_Volver.setBackground(new java.awt.Color(204, 204, 255));
+        jButton_Volver.setBackground(new java.awt.Color(0, 153, 153));
         jButton_Volver.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButton_Volver.setForeground(new java.awt.Color(0, 0, 0));
         jButton_Volver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_Actividades.png"))); // NOI18N
@@ -132,30 +134,25 @@ public class Caso_Buscar extends javax.swing.JFrame {
         panelBtns.setLayout(panelBtnsLayout);
         panelBtnsLayout.setHorizontalGroup(
             panelBtnsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelBtnsLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(panelBtnsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnFam, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnPasatiempos, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
-                    .addComponent(btnMedicinas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnAlarmas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton_Volver, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+            .addComponent(jButton_Volver, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnAlarmas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnMedicinas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnPasatiempos, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)
+            .addComponent(btnFam, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)
         );
         panelBtnsLayout.setVerticalGroup(
             panelBtnsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelBtnsLayout.createSequentialGroup()
-                .addContainerGap(98, Short.MAX_VALUE)
-                .addComponent(btnFam)
-                .addGap(18, 18, 18)
-                .addComponent(btnPasatiempos)
-                .addGap(18, 18, 18)
-                .addComponent(btnMedicinas)
-                .addGap(18, 18, 18)
-                .addComponent(btnAlarmas)
-                .addGap(18, 18, 18)
-                .addComponent(jButton_Volver)
-                .addGap(90, 90, 90))
+                .addContainerGap(59, Short.MAX_VALUE)
+                .addComponent(btnFam, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnPasatiempos, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnMedicinas, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnAlarmas, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton_Volver, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout paneltitleLayout = new javax.swing.GroupLayout(paneltitle);
@@ -163,24 +160,20 @@ public class Caso_Buscar extends javax.swing.JFrame {
         paneltitleLayout.setHorizontalGroup(
             paneltitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(paneltitleLayout.createSequentialGroup()
-                .addGroup(paneltitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(paneltitleLayout.createSequentialGroup()
-                        .addComponent(lblTitle)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(paneltitleLayout.createSequentialGroup()
-                        .addComponent(panelBtns, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 527, Short.MAX_VALUE)))
+                .addComponent(panelBtns, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 527, Short.MAX_VALUE)
                 .addGap(6, 6, 6))
+            .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         paneltitleLayout.setVerticalGroup(
             paneltitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(paneltitleLayout.createSequentialGroup()
-                .addComponent(lblTitle)
+                .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(paneltitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(panelBtns, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 

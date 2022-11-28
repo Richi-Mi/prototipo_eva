@@ -81,8 +81,8 @@ public class Cumpleaños extends javax.swing.JFrame {
         JLabel_Titulo1 = new javax.swing.JLabel();
         jButton_Borrar1 = new javax.swing.JButton();
         jPanel_Header = new javax.swing.JPanel();
-        jLabel_Salir = new javax.swing.JLabel();
         jLabel_HeaderActividades = new javax.swing.JLabel();
+        jLabel_Salir = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -95,7 +95,7 @@ public class Cumpleaños extends javax.swing.JFrame {
         JLabel_Titulo.setFont(new java.awt.Font("DialogInput", 1, 24)); // NOI18N
         JLabel_Titulo.setForeground(new java.awt.Color(0, 0, 0));
         JLabel_Titulo.setText("importantes para ti!!!");
-        jPanel_Fondo.add(JLabel_Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 320, -1));
+        jPanel_Fondo.add(JLabel_Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 320, -1));
 
         jLabel_NamePesona1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel_NamePesona1.setForeground(new java.awt.Color(51, 51, 51));
@@ -127,7 +127,7 @@ public class Cumpleaños extends javax.swing.JFrame {
         jTextField_KinshipPersona1.setBorder(null);
         jPanel_Fondo.add(jTextField_KinshipPersona1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 310, 30));
 
-        jButton_Save.setBackground(new java.awt.Color(204, 204, 255));
+        jButton_Save.setBackground(new java.awt.Color(102, 102, 255));
         jButton_Save.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButton_Save.setForeground(new java.awt.Color(0, 0, 0));
         jButton_Save.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_Guardar.png"))); // NOI18N
@@ -186,9 +186,9 @@ public class Cumpleaños extends javax.swing.JFrame {
         JLabel_Titulo1.setFont(new java.awt.Font("DialogInput", 1, 24)); // NOI18N
         JLabel_Titulo1.setForeground(new java.awt.Color(0, 0, 0));
         JLabel_Titulo1.setText("Ingresa el cumpleaños de personas ");
-        jPanel_Fondo.add(JLabel_Titulo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 490, -1));
+        jPanel_Fondo.add(JLabel_Titulo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 490, -1));
 
-        jButton_Borrar1.setBackground(new java.awt.Color(204, 204, 255));
+        jButton_Borrar1.setBackground(new java.awt.Color(102, 102, 255));
         jButton_Borrar1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButton_Borrar1.setForeground(new java.awt.Color(0, 0, 0));
         jButton_Borrar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_Actividades.png"))); // NOI18N
@@ -201,7 +201,7 @@ public class Cumpleaños extends javax.swing.JFrame {
         });
         jPanel_Fondo.add(jButton_Borrar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 400, -1, -1));
 
-        jPanel_Header.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel_Header.setBackground(new java.awt.Color(102, 102, 255));
         jPanel_Header.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 jPanel_HeaderMouseDragged(evt);
@@ -212,9 +212,14 @@ public class Cumpleaños extends javax.swing.JFrame {
                 jPanel_HeaderMousePressed(evt);
             }
         });
-        jPanel_Header.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel_Header.setLayout(new java.awt.GridLayout(1, 0));
 
-        jLabel_Salir.setBackground(java.awt.Color.blue);
+        jLabel_HeaderActividades.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel_HeaderActividades.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel_HeaderActividades.setText(" Cumpleaños");
+        jPanel_Header.add(jLabel_HeaderActividades);
+
+        jLabel_Salir.setBackground(new java.awt.Color(255, 51, 51));
         jLabel_Salir.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
         jLabel_Salir.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_Salir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -232,14 +237,9 @@ public class Cumpleaños extends javax.swing.JFrame {
                 jLabel_SalirMouseExited(evt);
             }
         });
-        jPanel_Header.add(jLabel_Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 0, 40, -1));
+        jPanel_Header.add(jLabel_Salir);
 
-        jLabel_HeaderActividades.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel_HeaderActividades.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel_HeaderActividades.setText("Cumpleaños");
-        jPanel_Header.add(jLabel_HeaderActividades, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        jPanel_Fondo.add(jPanel_Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, -1));
+        jPanel_Fondo.add(jPanel_Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -335,12 +335,12 @@ public class Cumpleaños extends javax.swing.JFrame {
     private void jLabel_SalirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_SalirMouseEntered
         // Colorear cuando pasa encima el cursor
         jLabel_Salir.setBackground(Color.red);
-        jLabel_Salir.setForeground(Color.black);
+        jLabel_Salir.setForeground(Color.WHITE);
     }//GEN-LAST:event_jLabel_SalirMouseEntered
 
     private void jLabel_SalirMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_SalirMouseExited
         // colorear cuando sale el cursor
-        jLabel_Salir.setBackground(Color.BLUE);
+        jLabel_Salir.setBackground( new Color( 255,102,102 ) );
         jLabel_Salir.setForeground(Color.white);
     }//GEN-LAST:event_jLabel_SalirMouseExited
 

@@ -16,201 +16,44 @@ import javax.swing.JOptionPane;
 /**
  * @author Juan Pablo Figueroa
  */
-
 public class Menu extends javax.swing.JFrame {
-    
+
     public Menu() {
         initComponents();
         setLocationRelativeTo(null);
+
+        this.setResizable(false);
+
         cerrar();
+
         Sonidos objeto = new Sonidos();
         objeto.Caso_Menu2();
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton_NombresImporantes = new javax.swing.JButton();
-        jButton_Pasatiempos = new javax.swing.JButton();
+        jPanel_Header = new javax.swing.JPanel();
+        jLabel_HeaderActividades = new javax.swing.JLabel();
+        jLabel_Salir = new javax.swing.JLabel();
         jButton_HoraDormir = new javax.swing.JButton();
         jButton_Volver = new javax.swing.JButton();
         jButton_Contactos = new javax.swing.JButton();
         jButton_DatosPersonales = new javax.swing.JButton();
         jButton_Medicinas = new javax.swing.JButton();
-        jPanel_Header = new javax.swing.JPanel();
-        jLabel_Salir = new javax.swing.JLabel();
-        jLabel_HeaderActividades = new javax.swing.JLabel();
+        jButton_NombresImporantes = new javax.swing.JButton();
+        jButton_Pasatiempos = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        setResizable(false);
+        setPreferredSize(new java.awt.Dimension(1200, 700));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton_NombresImporantes.setBackground(new java.awt.Color(204, 204, 255));
-        jButton_NombresImporantes.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jButton_NombresImporantes.setForeground(new java.awt.Color(0, 0, 0));
-        jButton_NombresImporantes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_PersonaImportante.png"))); // NOI18N
-        jButton_NombresImporantes.setText("Dime el nombre y cumpleaños depersonas importantes para ti");
-        jButton_NombresImporantes.setBorder(null);
-        jButton_NombresImporantes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton_NombresImporantes.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton_NombresImporantes.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jButton_NombresImporantesMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jButton_NombresImporantesMouseExited(evt);
-            }
-        });
-        jButton_NombresImporantes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_NombresImporantesActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton_NombresImporantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 660, 40));
-
-        jButton_Pasatiempos.setBackground(new java.awt.Color(204, 204, 255));
-        jButton_Pasatiempos.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jButton_Pasatiempos.setForeground(new java.awt.Color(0, 0, 0));
-        jButton_Pasatiempos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_Pasatiempo.png"))); // NOI18N
-        jButton_Pasatiempos.setText("Que es lo que te gusta hacer a diario u ocacionalmente");
-        jButton_Pasatiempos.setBorder(null);
-        jButton_Pasatiempos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton_Pasatiempos.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton_Pasatiempos.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jButton_PasatiemposMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jButton_PasatiemposMouseExited(evt);
-            }
-        });
-        jButton_Pasatiempos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_PasatiemposActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton_Pasatiempos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 660, 40));
-
-        jButton_HoraDormir.setBackground(new java.awt.Color(204, 204, 255));
-        jButton_HoraDormir.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jButton_HoraDormir.setForeground(new java.awt.Color(0, 0, 0));
-        jButton_HoraDormir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_Alarma.png"))); // NOI18N
-        jButton_HoraDormir.setText("Ingresar hora de dormir y de despertar");
-        jButton_HoraDormir.setBorder(null);
-        jButton_HoraDormir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton_HoraDormir.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton_HoraDormir.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jButton_HoraDormirMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jButton_HoraDormirMouseExited(evt);
-            }
-        });
-        jButton_HoraDormir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_HoraDormirActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton_HoraDormir, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 660, 40));
-
-        jButton_Volver.setBackground(new java.awt.Color(204, 204, 255));
-        jButton_Volver.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jButton_Volver.setForeground(new java.awt.Color(0, 0, 0));
-        jButton_Volver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_Actividades.png"))); // NOI18N
-        jButton_Volver.setText("Volver");
-        jButton_Volver.setBorder(null);
-        jButton_Volver.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton_Volver.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton_Volver.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jButton_VolverMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jButton_VolverMouseExited(evt);
-            }
-        });
-        jButton_Volver.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_VolverActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton_Volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 660, 40));
-
-        jButton_Contactos.setBackground(new java.awt.Color(204, 204, 255));
-        jButton_Contactos.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jButton_Contactos.setForeground(new java.awt.Color(0, 0, 0));
-        jButton_Contactos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_Contactos.png"))); // NOI18N
-        jButton_Contactos.setText("Ingresar números de telefono de personas importantes en caso de emergencia");
-        jButton_Contactos.setBorder(null);
-        jButton_Contactos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton_Contactos.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton_Contactos.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jButton_ContactosMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jButton_ContactosMouseExited(evt);
-            }
-        });
-        jButton_Contactos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_ContactosActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton_Contactos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 660, 40));
-
-        jButton_DatosPersonales.setBackground(new java.awt.Color(204, 204, 255));
-        jButton_DatosPersonales.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jButton_DatosPersonales.setForeground(new java.awt.Color(0, 0, 0));
-        jButton_DatosPersonales.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_Usuario.png"))); // NOI18N
-        jButton_DatosPersonales.setText("Ingresar mis datos personales (En caso de que olvides quien eres)");
-        jButton_DatosPersonales.setBorder(null);
-        jButton_DatosPersonales.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton_DatosPersonales.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton_DatosPersonales.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jButton_DatosPersonalesMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jButton_DatosPersonalesMouseExited(evt);
-            }
-        });
-        jButton_DatosPersonales.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_DatosPersonalesActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton_DatosPersonales, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 660, 40));
-
-        jButton_Medicinas.setBackground(new java.awt.Color(204, 204, 255));
-        jButton_Medicinas.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jButton_Medicinas.setForeground(new java.awt.Color(0, 0, 0));
-        jButton_Medicinas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_Medicinas.png"))); // NOI18N
-        jButton_Medicinas.setText("Añadir medicinas que debo tomar y cuándo las debo tomar");
-        jButton_Medicinas.setBorder(null);
-        jButton_Medicinas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton_Medicinas.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton_Medicinas.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jButton_MedicinasMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jButton_MedicinasMouseExited(evt);
-            }
-        });
-        jButton_Medicinas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_MedicinasActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton_Medicinas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 660, 40));
-
-        jPanel_Header.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel_Header.setBackground(new java.awt.Color(0, 153, 153));
         jPanel_Header.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 jPanel_HeaderMouseDragged(evt);
@@ -223,7 +66,14 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel_Header.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel_Salir.setBackground(java.awt.Color.blue);
+        jLabel_HeaderActividades.setBackground(new java.awt.Color(0, 153, 102));
+        jLabel_HeaderActividades.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
+        jLabel_HeaderActividades.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel_HeaderActividades.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_Contactos1.png"))); // NOI18N
+        jLabel_HeaderActividades.setText("   Menu");
+        jPanel_Header.add(jLabel_HeaderActividades, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 120, 30));
+
+        jLabel_Salir.setBackground(new java.awt.Color(255, 102, 102));
         jLabel_Salir.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
         jLabel_Salir.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_Salir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -241,24 +91,177 @@ public class Menu extends javax.swing.JFrame {
                 jLabel_SalirMouseExited(evt);
             }
         });
-        jPanel_Header.add(jLabel_Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 0, 40, -1));
+        jPanel_Header.add(jLabel_Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 0, 70, 40));
 
-        jLabel_HeaderActividades.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel_HeaderActividades.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel_HeaderActividades.setText("Menu");
-        jPanel_Header.add(jLabel_HeaderActividades, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jPanel1.add(jPanel_Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 40));
 
-        jPanel1.add(jPanel_Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, -1));
+        jButton_HoraDormir.setBackground(new java.awt.Color(204, 204, 255));
+        jButton_HoraDormir.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jButton_HoraDormir.setForeground(new java.awt.Color(0, 0, 0));
+        jButton_HoraDormir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_Alarma.png"))); // NOI18N
+        jButton_HoraDormir.setText("Ingresar hora de dormir y de despertar");
+        jButton_HoraDormir.setBorder(null);
+        jButton_HoraDormir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButton_HoraDormir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton_HoraDormirMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton_HoraDormirMouseExited(evt);
+            }
+        });
+        jButton_HoraDormir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_HoraDormirActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton_HoraDormir, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 1180, 90));
+
+        jButton_Volver.setBackground(new java.awt.Color(204, 204, 255));
+        jButton_Volver.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jButton_Volver.setForeground(new java.awt.Color(0, 0, 0));
+        jButton_Volver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_Actividades.png"))); // NOI18N
+        jButton_Volver.setText("Volver");
+        jButton_Volver.setBorder(null);
+        jButton_Volver.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButton_Volver.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton_VolverMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton_VolverMouseExited(evt);
+            }
+        });
+        jButton_Volver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_VolverActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton_Volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 620, 1180, 70));
+
+        jButton_Contactos.setBackground(new java.awt.Color(204, 204, 255));
+        jButton_Contactos.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jButton_Contactos.setForeground(new java.awt.Color(0, 0, 0));
+        jButton_Contactos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_Contactos.png"))); // NOI18N
+        jButton_Contactos.setText("Ingresar números de telefono de personas importantes en caso de emergencia");
+        jButton_Contactos.setBorder(null);
+        jButton_Contactos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButton_Contactos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton_ContactosMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton_ContactosMouseExited(evt);
+            }
+        });
+        jButton_Contactos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_ContactosActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton_Contactos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 1180, 80));
+
+        jButton_DatosPersonales.setBackground(new java.awt.Color(204, 204, 255));
+        jButton_DatosPersonales.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jButton_DatosPersonales.setForeground(new java.awt.Color(0, 0, 0));
+        jButton_DatosPersonales.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_Usuario.png"))); // NOI18N
+        jButton_DatosPersonales.setText("Ingresar mis datos personales (En caso de que olvides quien eres)");
+        jButton_DatosPersonales.setBorder(null);
+        jButton_DatosPersonales.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButton_DatosPersonales.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton_DatosPersonalesMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton_DatosPersonalesMouseExited(evt);
+            }
+        });
+        jButton_DatosPersonales.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_DatosPersonalesActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton_DatosPersonales, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 540, 1180, 70));
+
+        jButton_Medicinas.setBackground(new java.awt.Color(204, 204, 255));
+        jButton_Medicinas.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jButton_Medicinas.setForeground(new java.awt.Color(0, 0, 0));
+        jButton_Medicinas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_Medicinas.png"))); // NOI18N
+        jButton_Medicinas.setText("Añadir medicinas que debo tomar y cuándo las debo tomar");
+        jButton_Medicinas.setBorder(null);
+        jButton_Medicinas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButton_Medicinas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton_MedicinasMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton_MedicinasMouseExited(evt);
+            }
+        });
+        jButton_Medicinas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_MedicinasActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton_Medicinas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, 1180, 80));
+
+        jButton_NombresImporantes.setBackground(new java.awt.Color(204, 204, 255));
+        jButton_NombresImporantes.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jButton_NombresImporantes.setForeground(new java.awt.Color(0, 0, 0));
+        jButton_NombresImporantes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_PersonaImportante.png"))); // NOI18N
+        jButton_NombresImporantes.setText("  Dime el nombre y cumpleaños depersonas importantes para ti");
+        jButton_NombresImporantes.setAlignmentX(1.0F);
+        jButton_NombresImporantes.setBorder(null);
+        jButton_NombresImporantes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButton_NombresImporantes.setMargin(new java.awt.Insets(5, 14, 5, 14));
+        jButton_NombresImporantes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton_NombresImporantesMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton_NombresImporantesMouseExited(evt);
+            }
+        });
+        jButton_NombresImporantes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_NombresImporantesActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton_NombresImporantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 1180, 80));
+
+        jButton_Pasatiempos.setBackground(new java.awt.Color(204, 204, 255));
+        jButton_Pasatiempos.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jButton_Pasatiempos.setForeground(new java.awt.Color(0, 0, 0));
+        jButton_Pasatiempos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_Pasatiempo.png"))); // NOI18N
+        jButton_Pasatiempos.setText("Que es lo que te gusta hacer a diario u ocacionalmente");
+        jButton_Pasatiempos.setBorder(null);
+        jButton_Pasatiempos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButton_Pasatiempos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton_PasatiemposMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton_PasatiemposMouseExited(evt);
+            }
+        });
+        jButton_Pasatiempos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_PasatiemposActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton_Pasatiempos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 1180, 80));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 681, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 260, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
         );
 
         pack();
@@ -266,7 +269,8 @@ public class Menu extends javax.swing.JFrame {
 
     //<editor-fold defaultstate="collapsed" desc="Confirmar cierre de programa">
     public void cerrar() {
-        try {
+        try
+        {
             this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
             addWindowListener(new WindowAdapter() {
                 public void windowClosing(WindowEvent e) {
@@ -275,7 +279,8 @@ public class Menu extends javax.swing.JFrame {
                 }
             });
             this.setVisible(true);
-        } catch (Exception e) {
+        } catch (Exception e)
+        {
             e.printStackTrace();
         }
     }
@@ -284,7 +289,8 @@ public class Menu extends javax.swing.JFrame {
 
         int valor = JOptionPane.showConfirmDialog(this, "¿Estás segur@ de cerrar el programa?", "Advertencia", JOptionPane.YES_NO_OPTION);
 
-        if (valor == JOptionPane.YES_OPTION) {
+        if (valor == JOptionPane.YES_OPTION)
+        {
             JOptionPane.showMessageDialog(null, "Gracias por utilizar el programa :)", "Gracias", JOptionPane.INFORMATION_MESSAGE);
             System.exit(0);
         }
@@ -345,7 +351,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel_SalirMouseClicked
 
     int xMouse, yMouse;
-    
+
     private void jLabel_SalirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_SalirMouseEntered
         // Colorear cuando pasa encima el cursor
         jLabel_Salir.setBackground(Color.red);
@@ -354,7 +360,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void jLabel_SalirMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_SalirMouseExited
         // colorear cuando sale el cursor
-        jLabel_Salir.setBackground(Color.BLUE);
+        jLabel_Salir.setBackground(new Color(255, 102, 102));
         jLabel_Salir.setForeground(Color.white);
     }//GEN-LAST:event_jLabel_SalirMouseExited
 
@@ -441,7 +447,7 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
         jButton_Contactos.setBackground(new Color(204, 204, 255));
         jButton_Contactos.setForeground(Color.black);
-        
+
     }//GEN-LAST:event_jButton_ContactosMouseExited
 
     private void jButton_MedicinasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_MedicinasMouseEntered
@@ -472,7 +478,7 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
         jButton_Volver.setBackground(new Color(102, 102, 255));
         jButton_Volver.setForeground(Color.white);
-        
+
     }//GEN-LAST:event_jButton_VolverMouseEntered
 
     private void jButton_VolverMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_VolverMouseExited
@@ -487,20 +493,27 @@ public class Menu extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+        try
+        {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels())
+            {
+                if ("Nimbus".equals(info.getName()))
+                {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
+        } catch (ClassNotFoundException ex)
+        {
             java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
+        } catch (InstantiationException ex)
+        {
             java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
+        } catch (IllegalAccessException ex)
+        {
             java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (javax.swing.UnsupportedLookAndFeelException ex)
+        {
             java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>

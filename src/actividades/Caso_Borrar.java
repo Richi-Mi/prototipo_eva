@@ -62,32 +62,34 @@ public class Caso_Borrar extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panel_titulo.setBackground(new java.awt.Color(204, 204, 204));
+        panel_titulo.setBackground(new java.awt.Color(153, 0, 0));
 
+        jLabel1.setBackground(new java.awt.Color(153, 0, 0));
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Borrar");
 
         javax.swing.GroupLayout panel_tituloLayout = new javax.swing.GroupLayout(panel_titulo);
         panel_titulo.setLayout(panel_tituloLayout);
         panel_tituloLayout.setHorizontalGroup(
             panel_tituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_tituloLayout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 733, Short.MAX_VALUE))
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
         );
         panel_tituloLayout.setVerticalGroup(
             panel_tituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+            .addGroup(panel_tituloLayout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 2, Short.MAX_VALUE))
         );
 
-        getContentPane().add(panel_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 30));
+        getContentPane().add(panel_titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 50));
 
         panel_actions.setBackground(new java.awt.Color(255, 255, 255));
 
-        btnFam.setBackground(new java.awt.Color(204, 204, 255));
+        btnFam.setBackground(new java.awt.Color(51, 51, 255));
         btnFam.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        btnFam.setForeground(new java.awt.Color(0, 0, 0));
+        btnFam.setForeground(new java.awt.Color(255, 255, 255));
         btnFam.setText("Familiares");
         btnFam.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnFam.addActionListener(new java.awt.event.ActionListener() {
@@ -96,9 +98,9 @@ public class Caso_Borrar extends javax.swing.JFrame {
             }
         });
 
-        btnPasatiempos.setBackground(new java.awt.Color(204, 204, 255));
+        btnPasatiempos.setBackground(new java.awt.Color(51, 51, 255));
         btnPasatiempos.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        btnPasatiempos.setForeground(new java.awt.Color(0, 0, 0));
+        btnPasatiempos.setForeground(new java.awt.Color(255, 255, 255));
         btnPasatiempos.setText("Pasatiempos");
         btnPasatiempos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnPasatiempos.addActionListener(new java.awt.event.ActionListener() {
@@ -107,9 +109,9 @@ public class Caso_Borrar extends javax.swing.JFrame {
             }
         });
 
-        btnMedicinas.setBackground(new java.awt.Color(204, 204, 255));
+        btnMedicinas.setBackground(new java.awt.Color(51, 51, 255));
         btnMedicinas.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        btnMedicinas.setForeground(new java.awt.Color(0, 0, 0));
+        btnMedicinas.setForeground(new java.awt.Color(255, 255, 255));
         btnMedicinas.setText("Medicinas");
         btnMedicinas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnMedicinas.addActionListener(new java.awt.event.ActionListener() {
@@ -118,9 +120,9 @@ public class Caso_Borrar extends javax.swing.JFrame {
             }
         });
 
-        btnAlarmas.setBackground(new java.awt.Color(204, 204, 255));
+        btnAlarmas.setBackground(new java.awt.Color(51, 51, 255));
         btnAlarmas.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        btnAlarmas.setForeground(new java.awt.Color(0, 0, 0));
+        btnAlarmas.setForeground(new java.awt.Color(255, 255, 255));
         btnAlarmas.setText("Alarmas");
         btnAlarmas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnAlarmas.addActionListener(new java.awt.event.ActionListener() {
@@ -129,7 +131,7 @@ public class Caso_Borrar extends javax.swing.JFrame {
             }
         });
 
-        jButton_Volver.setBackground(new java.awt.Color(204, 204, 255));
+        jButton_Volver.setBackground(new java.awt.Color(153, 153, 255));
         jButton_Volver.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButton_Volver.setForeground(new java.awt.Color(0, 0, 0));
         jButton_Volver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_Actividades.png"))); // NOI18N
@@ -145,46 +147,42 @@ public class Caso_Borrar extends javax.swing.JFrame {
         panel_actions.setLayout(panel_actionsLayout);
         panel_actionsLayout.setHorizontalGroup(
             panel_actionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_actionsLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(panel_actionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnFam, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnPasatiempos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
-                    .addComponent(jButton_Volver, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnMedicinas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnAlarmas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+            .addComponent(jButton_Volver, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnAlarmas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnMedicinas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnPasatiempos, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
+            .addComponent(btnFam, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         panel_actionsLayout.setVerticalGroup(
             panel_actionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_actionsLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(btnFam)
-                .addGap(18, 18, 18)
-                .addComponent(btnPasatiempos)
-                .addGap(18, 18, 18)
-                .addComponent(btnMedicinas)
-                .addGap(18, 18, 18)
-                .addComponent(btnAlarmas)
-                .addGap(18, 18, 18)
-                .addComponent(jButton_Volver)
-                .addContainerGap(121, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_actionsLayout.createSequentialGroup()
+                .addContainerGap(67, Short.MAX_VALUE)
+                .addComponent(btnFam, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnPasatiempos, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnMedicinas, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnAlarmas, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton_Volver, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39))
         );
 
-        getContentPane().add(panel_actions, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 260, 350));
+        getContentPane().add(panel_actions, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 260, 430));
 
         panel_info.setBackground(new java.awt.Color(255, 255, 255));
         panel_info.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
-        panel_principal.setBackground(new java.awt.Color(204, 204, 204));
+        panel_principal.setBackground(new java.awt.Color(255, 0, 51));
         panel_principal.setLayout(new java.awt.GridLayout(0, 1));
         jScrollPane1.setViewportView(panel_principal);
 
-        panel_info.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 330));
+        panel_info.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 410));
 
-        getContentPane().add(panel_info, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 540, 350));
+        getContentPane().add(panel_info, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, 540, 410));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -38,7 +38,7 @@ public class InicioDecision extends javax.swing.JFrame {
         jLabel_IngresaUsuario1.setText("configuración?");
         jPanel1.add(jLabel_IngresaUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 240, -1));
 
-        jButton_Si.setBackground(new java.awt.Color(204, 204, 255));
+        jButton_Si.setBackground(new java.awt.Color(0, 204, 204));
         jButton_Si.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButton_Si.setForeground(new java.awt.Color(0, 0, 0));
         jButton_Si.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_Si.png"))); // NOI18N
@@ -51,7 +51,7 @@ public class InicioDecision extends javax.swing.JFrame {
         });
         jPanel1.add(jButton_Si, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
 
-        jButton_No.setBackground(new java.awt.Color(204, 204, 255));
+        jButton_No.setBackground(new java.awt.Color(0, 204, 204));
         jButton_No.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButton_No.setForeground(new java.awt.Color(0, 0, 0));
         jButton_No.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_No.png"))); // NOI18N
