@@ -1,8 +1,9 @@
 
 package interfaces;
 
+import database.Database;
 import java.awt.Color;
-import javax.swing.JOptionPane;
+import modelos.Usuario;
 
 /**
  * @author José Ricardo Mendoza Castañeda
@@ -10,6 +11,8 @@ import javax.swing.JOptionPane;
 public class LoginApp extends javax.swing.JFrame {
 
     int xMouse, yMouse;
+    private String nombre, sexo, idioma;
+    private Usuario usr;
     
     public LoginApp() {
         initComponents();
@@ -47,11 +50,11 @@ public class LoginApp extends javax.swing.JFrame {
         backgroundPanel.setBackground(new java.awt.Color(255, 255, 255));
         backgroundPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jlbl_nombre_empresa.setFont(new java.awt.Font("GothicE", 0, 48)); // NOI18N
+        jlbl_nombre_empresa.setFont(new java.awt.Font("Liberation Sans", 0, 48)); // NOI18N
         jlbl_nombre_empresa.setForeground(new java.awt.Color(255, 255, 255));
         jlbl_nombre_empresa.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jlbl_nombre_empresa.setText("EVA");
-        backgroundPanel.add(jlbl_nombre_empresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 290, 370, 90));
+        jlbl_nombre_empresa.setText("E.V.A");
+        backgroundPanel.add(jlbl_nombre_empresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 410, 370, 90));
 
         btnClose.setBackground(new java.awt.Color(255, 255, 255));
         btnClose.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -284,22 +287,35 @@ public class LoginApp extends javax.swing.JFrame {
             input_usuario.setText("");    
             input_usuario.setForeground(Color.black);
         }
+        
     }//GEN-LAST:event_input_usuarioMousePressed
 
     private void loginBtnTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginBtnTextMouseClicked
-        // Terminar Login
-        JOptionPane.showMessageDialog(null, "Hola " + input_usuario.getText(), "Hola Capo", JOptionPane.DEFAULT_OPTION);
+        nombre = input_usuario.getText();
+        sexo = jComboBox_Sexos.getSelectedItem().toString();
+        idioma = jComboBox_Idiomas.getSelectedItem().toString();
+        try {
+            if (!input_usuario.getText().equals(""))
+            {
+
+                String nombre = input_usuario.getText();
+                String sexo   = (String) jComboBox_Sexos.getSelectedItem();
+                String idioma = (String) jComboBox_Idiomas.getSelectedItem();
+
+                usr = new Usuario(nombre, sexo, idioma);
+                Database.insert(usr);
+            }
+
+        } catch (Exception ex) {
+            System.out.println("Error al entrar a la configuracion");
+        }
+
+        dispose();
+
+        new InicioDecision().setVisible(true);
     }//GEN-LAST:event_loginBtnTextMouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -317,9 +333,7 @@ public class LoginApp extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(LoginApp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
+
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
