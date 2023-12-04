@@ -6,6 +6,8 @@ import actividades.Caso_Buscar;
 import actividades.Caso_Borrar;
 import helpers.Sonidos;
 import java.awt.Color;
+import java.awt.Desktop;
+import java.net.URI;
 
 /**
  * @author Juan Pablo Figueroa.
@@ -43,7 +45,7 @@ public class Actividades extends javax.swing.JFrame {
         jPanel_Header = new javax.swing.JPanel();
         jLabel_Salir = new javax.swing.JLabel();
         jLabel_HeaderActividades = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        jButton_AcercaEva1 = new javax.swing.JButton();
 
         jButton1.setText("jButton1");
 
@@ -67,7 +69,7 @@ public class Actividades extends javax.swing.JFrame {
         jButton_AcercaEva.setBackground(new java.awt.Color(204, 204, 255));
         jButton_AcercaEva.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jButton_AcercaEva.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_Pregunta.png"))); // NOI18N
-        jButton_AcercaEva.setText("Acerca de eva");
+        jButton_AcercaEva.setText("Juego de Memorama");
         jButton_AcercaEva.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton_AcercaEva.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -82,7 +84,7 @@ public class Actividades extends javax.swing.JFrame {
                 jButton_AcercaEvaActionPerformed(evt);
             }
         });
-        jPanel_fondo.add(jButton_AcercaEva, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 410, 560, -1));
+        jPanel_fondo.add(jButton_AcercaEva, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, 560, -1));
 
         jButton_Borrar.setBackground(new java.awt.Color(204, 204, 255));
         jButton_Borrar.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
@@ -102,7 +104,7 @@ public class Actividades extends javax.swing.JFrame {
                 jButton_BorrarActionPerformed(evt);
             }
         });
-        jPanel_fondo.add(jButton_Borrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 560, -1));
+        jPanel_fondo.add(jButton_Borrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 560, -1));
 
         jButton_Alarmas.setBackground(new java.awt.Color(204, 204, 255));
         jButton_Alarmas.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
@@ -122,7 +124,7 @@ public class Actividades extends javax.swing.JFrame {
                 jButton_AlarmasActionPerformed(evt);
             }
         });
-        jPanel_fondo.add(jButton_Alarmas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 560, -1));
+        jPanel_fondo.add(jButton_Alarmas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 560, -1));
 
         jButton_Buscar.setBackground(new java.awt.Color(204, 204, 255));
         jButton_Buscar.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
@@ -142,7 +144,7 @@ public class Actividades extends javax.swing.JFrame {
                 jButton_BuscarActionPerformed(evt);
             }
         });
-        jPanel_fondo.add(jButton_Buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 560, -1));
+        jPanel_fondo.add(jButton_Buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 560, -1));
 
         jButton_Menu.setBackground(new java.awt.Color(204, 204, 255));
         jButton_Menu.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
@@ -182,7 +184,7 @@ public class Actividades extends javax.swing.JFrame {
                 jButton_AyudaActionPerformed(evt);
             }
         });
-        jPanel_fondo.add(jButton_Ayuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 560, -1));
+        jPanel_fondo.add(jButton_Ayuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 560, -1));
         jPanel_fondo.add(jLabel_Invisible, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 420, 40, 20));
 
         jPanel_Header.setBackground(new java.awt.Color(204, 204, 204));
@@ -217,7 +219,6 @@ public class Actividades extends javax.swing.JFrame {
         });
 
         jLabel_HeaderActividades.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel_HeaderActividades.setForeground(new java.awt.Color(0, 0, 0));
         jLabel_HeaderActividades.setText("Actividades");
 
         javax.swing.GroupLayout jPanel_HeaderLayout = new javax.swing.GroupLayout(jPanel_Header);
@@ -237,8 +238,25 @@ public class Actividades extends javax.swing.JFrame {
 
         jPanel_fondo.add(jPanel_Header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 860, 40));
 
-        jLabel1.setText("Espacio de alarmas");
-        jPanel_fondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 220, 230, 240));
+        jButton_AcercaEva1.setBackground(new java.awt.Color(204, 204, 255));
+        jButton_AcercaEva1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jButton_AcercaEva1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/App_Diseños/Icono_Pregunta.png"))); // NOI18N
+        jButton_AcercaEva1.setText("Pagina de EVA.");
+        jButton_AcercaEva1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButton_AcercaEva1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton_AcercaEva1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton_AcercaEva1MouseExited(evt);
+            }
+        });
+        jButton_AcercaEva1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_AcercaEva1ActionPerformed(evt);
+            }
+        });
+        jPanel_fondo.add(jButton_AcercaEva1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 560, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -334,7 +352,7 @@ public class Actividades extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton_AyudaActionPerformed
 
     private void jButton_AcercaEvaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_AcercaEvaActionPerformed
-        // TODO add your handling code here:
+        abrirEnlaceWeb("https://richi-mi.github.io/Juego-De-Memoria/");
     }//GEN-LAST:event_jButton_AcercaEvaActionPerformed
                         
     private void jButton_MenuMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_MenuMouseEntered
@@ -410,6 +428,25 @@ public class Actividades extends javax.swing.JFrame {
         jButton_AcercaEva.setForeground(Color.black);
     }//GEN-LAST:event_jButton_AcercaEvaMouseExited
 
+    private void jButton_AcercaEva1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_AcercaEva1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton_AcercaEva1MouseEntered
+
+    private void jButton_AcercaEva1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_AcercaEva1MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton_AcercaEva1MouseExited
+
+    private void jButton_AcercaEva1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_AcercaEva1ActionPerformed
+        abrirEnlaceWeb("https://richi-mi.github.io/pagina_eva/");
+    }//GEN-LAST:event_jButton_AcercaEva1ActionPerformed
+
+    public static void abrirEnlaceWeb(String url) {
+        try {
+            Desktop.getDesktop().browse(new URI(url));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -456,12 +493,12 @@ public class Actividades extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton_AcercaEva;
+    private javax.swing.JButton jButton_AcercaEva1;
     private javax.swing.JButton jButton_Alarmas;
     private javax.swing.JButton jButton_Ayuda;
     private javax.swing.JButton jButton_Borrar;
     private javax.swing.JButton jButton_Buscar;
     private javax.swing.JButton jButton_Menu;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel_HeaderActividades;
     private javax.swing.JLabel jLabel_Invisible;
     private javax.swing.JLabel jLabel_Salir;
